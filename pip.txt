@@ -1,0 +1,117 @@
+pip install --upgrade pip setuptools wheel
+Werner@DESKTOP-NRFUTND MINGW32 /c/users/werner/desktop
+
+
+
+C:\Users\Werner\Desktop\1>pyinstaller -F -w Translater.py
+pyuic5 -x cal_1.ui -o calc.py
+
+
+
+pip install mouse
+pip install keyboard
+pip install pyautogui
+pip install Cmake
+pip install wheel
+pip install --upgrade pip
+pip install --upgrade setuptools
+pip install cmake --upgrade
+pip install requests
+python --version
+pip install pygame-gui
+pip install game-ui
+pip install agg
+ pip install --upgrade setuptools
+pip
+pip install opencv-python  #cv2
+pip uninstall pycrypto
+pip install pycryptodome
+python -m pip install --upgrade pip
+pip install pycryptodome-test-vectors
+python -m Crypto.SelfTest
+pip install pycryptodomex --no-binary :all:
+pip install unroll
+pip install ez_setup
+pip install unirest
+pip install gcloud
+pip install pyrebase
+pip install apache-beam
+pip install google-cloud-dataflow
+PIP install numpy
+pip install Matplotlib 
+pip install machine-stats
+pip install PyQt6
+pip install pymachinery
+pip install -U setuptools-rust
+pip install smbus2
+pip install waitress
+pip install asukiaaa-py-i2c-lcd
+pip install -U pyinstaller
+C:\Users\Werner\Desktop\1>pyinstaller diameter.py
+C:\Users\Werner\Desktop\1>pyinstaller --onefile diameter.py
+C:\Users\Werner\Desktop\1>pyinstaller -F  diameter.py
+C:\Users\Werner\Desktop\1>pyinstaller -F -w  diameter.py
+C:\Users\Werner>python -m pip install -U pygame --user
+ pip install pygame
+C:\Users\Werner>python -m pip install -U game-ui --user
+
+
+
+
+
+
+
+
+
+'''
+PS C:\Users\Werner> pip install machin
+Collecting machin
+  Downloading machin-0.4.2-py3-none-any.whl (181 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.5/181.5 kB 353.1 kB/s eta 0:00:00
+Requirement already satisfied: gym in c:\python\lib\site-packages (from machin) (0.26.2)
+Collecting psutil
+  Downloading psutil-5.9.4-cp36-abi3-win32.whl (247 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.2/247.2 kB 489.6 kB/s eta 0:00:00
+Requirement already satisfied: numpy in c:\python\lib\site-packages (from machin) (1.23.4)
+Collecting machin
+  Downloading machin-0.4.1-py3-none-any.whl (162 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 162.7/162.7 kB 444.5 kB/s eta 0:00:00
+  Downloading machin-0.4.0-py3-none-any.whl (160 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.7/160.7 kB 370.6 kB/s eta 0:00:00
+  Downloading machin-0.3.4-py3-none-any.whl (135 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.4/135.4 kB 472.3 kB/s eta 0:00:00
+  Downloading machin-0.3.2-py3-none-any.whl (134 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.8/134.8 kB 275.0 kB/s eta 0:00:00
+  Downloading machin-0.3.1-py3-none-any.whl (127 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.3/127.3 kB 500.5 kB/s eta 0:00:00
+  Downloading machin-0.3.0-py3-none-any.whl (127 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.4/127.4 kB 312.3 kB/s eta 0:00:00
+  Downloading machin-0.1.0-py3-none-any.whl (112 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 112.3/112.3 kB 344.8 kB/s eta 0:00:00
+ERROR: Cannot install machin==0.1.0, machin==0.3.0, machin==0.3.1, machin==0.3.2, machin==0.3.4, machin==0.4.0, machin==0.4.1 and machin==0.4.2 because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    machin 0.4.2 depends on torch>=1.6.0
+    machin 0.4.1 depends on torch>=1.6.0
+    machin 0.4.0 depends on torch>=1.6.0
+    machin 0.3.4 depends on torch>=1.5.0
+    machin 0.3.2 depends on torch>=1.5.0
+    machin 0.3.1 depends on torch>=1.5.0
+    machin 0.3.0 depends on torch>=1.5.0
+    machin 0.1.0 depends on torch>=1.5.0
+
+To fix this you could try to:
+1. loosen the range of package versions you've specified
+2. remove package versions to allow pip attempt to solve the dependency conflict
+
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+PS C:\Users\Werner> 
+'''
+
+
+
+C:\Users\User\AppData\Local\Programs\Python\Python310\Scripts\
+C:\Users\User\AppData\Local\Programs\Python\Python310\
+C:\Users\User\AppData\Local\GitHubDesktop\bin
+C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin
+%USERPROFILE%\AppData\Local\Microsoft\WindowsApps

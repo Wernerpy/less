@@ -1,0 +1,128 @@
+from math import *
+
+D = 250
+m = 138.65
+m = round(m,2)
+H = 1
+'''
+Result D: 250
+Result m: 138.65
+Result H: 1
+Result d: 200
+Result V1: 17662.5
+Result S2: 17662.5
+
+'''
+
+pi = 3.1415 
+p = 7.85 
+
+V = m/p*1000
+V = round(V,2)
+
+S = V / H
+S = round(S,2)
+x = V * m / p * H 
+
+S2 = (pi * D**2 / 4) - S 
+S3 = S2/pi*4
+S4 = sqrt(S3)
+S4 = round(S4,2)
+
+print('')
+print('Result D:',D)
+print('Result d:',S4)
+print('Result H:',H)
+print('Result V:',V)
+print('Result m:',m)
+print('Result S:',S)
+
+print('')
+
+
+
+from math import *
+
+
+D = 132#mm наружный диаметр
+p = 7.85 #g/cm2
+H = 1 #mm
+d = 50 #mm
+
+pi = float(3.14) #постоянная величина
+T = float(D - d)/2 #толщина
+m = float(pi * H * T * (d + T) / 1000 * p) #масса
+m = round(m,2)
+V1 = H * T * pi * (d + T) #объем
+V1 = round(V1,2)
+V2 = m/p #объем
+S = pi / 4 * ((d + 2 * T)**2 - d**2) #площадь
+S1 = pi / 4 * (D**2 - (D - 2 * T)**2) #площадь
+S2 = pi / 4 * (D**2 - d**2) #площадь
+S2 = round(S2,2)
+C1 = pi * D #длина окружности
+C2 = pi * (D - T)
+C3 = pi * (d + T)
+
+
+print(' ')
+
+print('Result D:',D)
+print('Result m:',m)
+print('Result H:',H)
+print('Result d:',d)
+print('Result V1:',V1)
+print('Result S2:',S2)
+
+print(' ')
+
+
+
+from math import *
+
+D = 200
+m = 138.65
+m = round(m,2)
+H = 1
+'''
+Result D: 250
+Result m: 138.65
+Result H: 1
+Result d: 200
+Result V1: 17662.5
+Result S2: 17662.5
+
+Result D: 200
+Result m: 139.12
+Result H: 1
+Result d: 132
+Result V1: 17722.16
+Result S2: 17722.16
+
+
+'''
+
+pi = 3.1415 
+p = 7.85 
+
+V = m/p*1000
+V = round(V,2)
+
+S = V / H
+S = round(S,2)
+x = V * m / p * H 
+
+S2 = (pi * D**2 / 4) - S 
+S3 = S2/pi*4
+S4 = sqrt(S3)
+S4 = round(S4,2)
+
+print('')
+print('Result D:',D)
+print('Result d:',S4)
+print('Result H:',H)
+print('Result V:',V)
+print('Result m:',m)
+print('Result S:',S)
+
+print('')

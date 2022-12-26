@@ -1,0 +1,1074 @@
+$ git --version
+git version 2.39.0.windows.1
+https://github.com/Wernerpy/test-.git
+
+git status
+git add .
+git commit -m "add commit"
+git push
+git pull
+git log
+$ git checkout 2121204348e25cd30715feb8924138a0ca70fde8
+
+
+pyuic5 -x cal_1.ui -o calc.py
+
+
+
+
+git remote set-url origin https://github.com/zkirkland/Random-Python-Tests.git
+git config --global credential.helper wincred
+git push -u origin branch_name_that_you_want_to_push
+git remote -v
+git remote set-url origin git@github.com:USERNAME/REPONAME.git
+git remote add origin https://username:access-token@github.com/username/repo.git
+
+
+
+
+
+
+
+
+$ git checkout main
+$ git switch -
+$ git branch -a
+$ git reset
+$ git restore
+$ git commit -- amend
+$ git push --set-upstream origin Future_1  добавить ветку на github
+$ git checkout Future_1 переключиться на Future_1
+git config --list --show-origin
+
+
+//////////////////////////////
+
+
+
+
+
+$ git remote add origin https://github.com/Wernerpy/foon.git
+$ git push origin master
+$ cd d:/forgit
+$ git init
+$ dir
+$ git status
+$ git clone https://github.com/Wernerpy/foon.git
+$ git add foon.py
+$ git commit -m "commit"
+$ git remote add Wernerpy https://github.com
+$ git remote add origin https://github.com/Wernerpy/foon.git
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 262 bytes | 87.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Wernerpy/foon/pull/new/master
+remote:
+To https://github.com/Wernerpy/foon.git
+ * [new branch]      master -> master
+
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 275 bytes | 91.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Wernerpy/foon.git
+   2532946..01659f0  master -> master
+
+$ git clone https://github.com/Wernerpy/foon.git myNew
+Cloning into 'myNew'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 9 (delta 1), reused 6 (delta 1), pack-reused 0
+Receiving objects: 100% (9/9), done.
+Resolving deltas: 100% (1/1), done.
+
+$ git clone https://github.com/Wernerpy/foon.git myNew
+Cloning into 'myNew'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+
+$ cd d:
+$ cd dir
+$ cd for_w_py_git
+$ git init
+Initialized empty Git repository in D:/for_w_py_git/.git/
+$ git add .
+$ git commit -m "fist commit"
+
+
+
+
+$ git config
+
+$ git config --global user.name "wernerpy"
+
+$ git config --global user.email "alex198424@gmal.com"
+
+12345qwertA#
+
+Wernerpy
+12345qwertA#
+
+
+
+
+User@WIN-PKQRA1OSOHG MINGW64 ~
+$ git config --list
+git config --list --show-origin
+
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=werner
+user.email=alex198424@gmal.com
+
+$ git push --set-upstream origin Future_1  добавить ветку на github
+$ git checkout Future_1 переключиться на Future_1
+$ git checkout -b Future_1 создать ветку и сразу переключиться на нее
+$ git branch Future_2 создание ветки Future_2
+$ git checkout main
+$ git merge Future_1
+
+
+$ git config --global user.name "[ИМЯ]"
+$ git config --global user.email "[адрес электронной почты]"
+$ git add .
+$ git init
+$ git commit -m "  "
+$ git push
+$ cd c:forgit
+$ git clone https://github.com/Wernerpy/test-.git
+
+$ git branch -a
+$ git log
+$ git checkout Future_1
+$ git log
+$ git checkout 68b39de299287728d5ef6dc99540f7083e1f56d5
+Note: switching to '68b39de299287728d5ef6dc99540f7083e1f56d5'.
+$ git switch Future_2 #переключает на ветку
+$ git switch -c Future_2
+$ git switch - #переключает с лога на ветку обратно работает после $ git checkout номер комента
+Switched to a new branch 'Future_2'
+
+$ git checkout main
+Werner@DESKTOP-NRFUTND MINGW32 /c/forgit (main)
+$ git merge Future_2
+Werner@DESKTOP-NRFUTND MINGW32 /c/forgit (main)
+$ git branch -d FUture_1
+Deleted branch FUture_1 (was 68b39de).
+$ git push origin HEAD:main #когда не на ветке находишься а в коммент 
+           и не перешел на ветку а сохраниться надо то пишешь так
+$ git push --set-upstream origin Future_1  добавить ветку на github
+$ git checkout Future_1 переключиться на Future_1
+$ git checkout -b Future_1 создать ветку и сразу переключиться на нее
+$ git branch Future_2 создание ветки Future_2
+$ git checkout main
+$ git merge Future_1
+
+$ git push --set-upstream origin Future_1  добавить ветку на github
+$ git checkout Future_1 переключиться на Future_1
+
+$ git config --global user.name "[ИМЯ]"
+
+$ git config --global user.email "[адрес электронной почты]"
+
+$ git init [пазвание проекта]
+
+$ git clone [url - адрес]
+
+$ git status 
+
+$ git diff
+
+$ git add [файл]
+
+$ git diff --staged
+
+$ git reset [файл]
+
+$ git commit -m "[сообщение с описанием]"
+
+$ git branch
+
+$ clear
+
+$ git --help
+
+https://github.com/Wernerpy/test-/branches
+
+
+$ git config --global user.name "Wernerpy"
+
+$ git config --global user.email "alex198424@gmail.com"
+
+$ git config --global core.autocrlf true
+
+$ git config --global core.safecrlf true
+
+https://github.com/Wernerpy/clock.git
+$ git clone https://github.com/Werner/clock.git myNew
+
+$ git clone https://github.com/Wernerpy/foon.git myNew
+
+
+репозиторий 
+
+git rm отмена действия
+git rm -cached "file"
+  .gitignore
+git diff --cached
+
+git remote add Wernerpy https://github.com
+
+
+
+
+
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push 
+
+
+
+
+
+
+
+
+$ git diff
+warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+usage: git diff --no-index [<options>] <path> <path>
+
+
+Diff rename options
+    -B, --break-rewrites[=<n>[/<m>]]
+                          break complete rewrite changes into pairs of delete and create
+    -M, --find-renames[=<n>]
+                          detect renames
+    -D, --irreversible-delete
+                          omit the preimage for deletes
+    -C, --find-copies[=<n>]
+                          detect copies
+    --find-copies-harder  use unmodified files as source to find copies
+    --no-renames          disable rename detection
+    --rename-empty        use empty blobs as rename source
+    --follow              continue listing the history of a file beyond renames
+    -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+Diff algorithm options
+    --minimal             produce the smallest possible diff
+    -w, --ignore-all-space
+                          ignore whitespace when comparing lines
+    -b, --ignore-space-change
+                          ignore changes in amount of whitespace
+    --ignore-space-at-eol
+                          ignore changes in whitespace at EOL
+    --ignore-cr-at-eol    ignore carrier-return at the end of line
+    --ignore-blank-lines  ignore changes whose lines are all blank
+    -I, --ignore-matching-lines <regex>
+                          ignore changes whose all lines match <regex>
+    --indent-heuristic    heuristic to shift diff hunk boundaries for easy reading
+    --patience            generate diff using the "patience diff" algorithm
+    --histogram           generate diff using the "histogram diff" algorithm
+    --diff-algorithm <algorithm>
+                          choose a diff algorithm
+    --anchored <text>     generate diff using the "anchored diff" algorithm
+    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words
+    --word-diff-regex <regex>
+                          use <regex> to decide what a word is
+    --color-words[=<regex>]
+                          equivalent to --word-diff=color --word-diff-regex=<regex>
+    --color-moved[=<mode>]
+                          moved lines of code are colored differently
+    --color-moved-ws <mode>
+                          how white spaces are ignored in --color-moved
+
+
+
+$ git config --global user.name "[ИМЯ]"
+
+$ git config --global user.email "[адрес электронной почты]"
+
+
+
+
+
+
+https://github.com/Wernerpy/test-/branches
+
+
+$ git config --global user.name "Wernerpy"
+
+$ git config --global user.email "alex198424@gmail.com"
+
+$ git config --global core.autocrlf true
+
+$ git config --global core.safecrlf true
+
+https://github.com/Wernerpy/clock.git
+$ git clone https://github.com/Werner/clock.git myNew
+
+$ git clone https://github.com/Wernerpy/foon.git myNew
+
+
+репозиторий 
+
+git rm отмена действия
+git rm -cached "file"
+  .gitignore
+git diff --cached
+
+git remote add Wernerpy https://github.com
+
+
+
+
+
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push 
+
+$ git diff
+warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+usage: git diff --no-index [<options>] <path> <path>
+
+
+/////////////////////////////////////////////////////////
+
+
+$ git push --set-upstream origin Future_1  добавить ветку на github
+$ git checkout Future_1 переключиться на Future_1
+
+$ git config --global user.name "[ИМЯ]"
+
+$ git config --global user.email "[адрес электронной почты]"
+
+
+
+
+https://github.com/Wernerpy/test-/branches
+
+
+$ git config --global user.name "Wernerpy"
+
+$ git config --global user.email "alex198424@gmail.com"
+
+$ git config --global core.autocrlf true
+
+$ git config --global core.safecrlf true
+
+https://github.com/Wernerpy/clock.git
+$ git clone https://github.com/Werner/clock.git myNew
+
+$ git clone https://github.com/Wernerpy/foon.git myNew
+
+
+репозиторий 
+
+git rm отмена действия
+git rm -cached "file"
+  .gitignore
+git diff --cached
+
+git remote add Wernerpy https://github.com
+
+
+
+
+
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push 
+
+
+
+
+
+
+
+
+$ git diff
+warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+usage: git diff --no-index [<options>] <path> <path>
+
+Diff output format options
+    -p, --patch           generate patch
+    -s, --no-patch        suppress diff output
+    -u                    generate patch
+    -U, --unified[=<n>]   generate diffs with <n> lines context
+    -W, --function-context
+                          generate diffs with <n> lines context
+    --raw                 generate the diff in raw format
+    --patch-with-raw      synonym for '-p --raw'
+    --patch-with-stat     synonym for '-p --stat'
+    --numstat             machine friendly --stat
+    --shortstat           output only the last line of --stat
+    -X, --dirstat[=<param1,param2>...]
+                          output the distribution of relative amount of changes for each sub-directory
+    --cumulative          synonym for --dirstat=cumulative
+    --dirstat-by-file[=<param1,param2>...]
+                          synonym for --dirstat=files,param1,param2...
+    --check               warn if changes introduce conflict markers or whitespace errors
+    --summary             condensed summary such as creations, renames and mode changes
+    --name-only           show only names of changed files
+    --name-status         show only names and status of changed files
+    --stat[=<width>[,<name-width>[,<count>]]]
+                          generate diffstat
+    --stat-width <width>  generate diffstat with a given width
+    --stat-name-width <width>
+                          generate diffstat with a given name width
+    --stat-graph-width <width>
+                          generate diffstat with a given graph width
+    --stat-count <count>  generate diffstat with limited lines
+    --compact-summary     generate compact summary in diffstat
+    --binary              output a binary diff that can be applied
+    --full-index          show full pre- and post-image object names on the "index" lines
+    --color[=<when>]      show colored diff
+    --ws-error-highlight <kind>
+                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+    --abbrev[=<n>]        use <n> digits to display object names
+    --src-prefix <prefix>
+                          show the given source prefix instead of "a/"
+    --dst-prefix <prefix>
+                          show the given destination prefix instead of "b/"
+    --line-prefix <prefix>
+                          prepend an additional prefix to every line of output
+    --no-prefix           do not show any source or destination prefix
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --output-indicator-new <char>
+                          specify the character to indicate a new line instead of '+'
+    --output-indicator-old <char>
+                          specify the character to indicate an old line instead of '-'
+    --output-indicator-context <char>
+                          specify the character to indicate a context instead of ' '
+
+           prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+
+$ git push --set-upstream origin Future_1  добавить ветку на github
+$ git checkout Future_1 переключиться на Future_1
+
+$ git config --global user.name "[ИМЯ]"
+
+$ git config --global user.email "[адрес электронной почты]"
+
+
+
+https://github.com/Wernerpy/test-/branches
+
+
+$ git config --global user.name "Wernerpy"
+
+$ git config --global user.email "alex198424@gmail.com"
+
+$ git config --global core.autocrlf true
+
+$ git config --global core.safecrlf true
+
+https://github.com/Wernerpy/clock.git
+$ git clone https://github.com/Werner/clock.git myNew
+
+$ git clone https://github.com/Wernerpy/foon.git myNew
+
+
+репозиторий 
+
+git rm отмена действия
+git rm -cached "file"
+  .gitignore
+git diff --cached
+
+git remote add Wernerpy https://github.com
+
+
+
+
+
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push 
+
+
+
+
+
+
+
+
+$ git diff
+warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+usage: git diff --no-index [<options>] <path> <path>
+
+Diff output format options
+    -p, --patch           generate patch
+    -s, --no-patch        suppress diff output
+    -u                    generate patch
+    -U, --unified[=<n>]   generate diffs with <n> lines context
+    -W, --function-context
+                          generate diffs with <n> lines context
+    --raw                 generate the diff in raw format
+    --patch-with-raw      synonym for '-p --raw'
+    --patch-with-stat     synonym for '-p --stat'
+    --numstat             machine friendly --stat
+    --shortstat           output only the last line of --stat
+    -X, --dirstat[=<param1,param2>...]
+                          output the distribution of relative amount of changes for each sub-directory
+    --cumulative          synonym for --dirstat=cumulative
+    --dirstat-by-file[=<param1,param2>...]
+                          synonym for --dirstat=files,param1,param2...
+    --check               warn if changes introduce conflict markers or whitespace errors
+    --summary             condensed summary such as creations, renames and mode changes
+    --name-only           show only names of changed files
+    --name-status         show only names and status of changed files
+    --stat[=<width>[,<name-width>[,<count>]]]
+                          generate diffstat
+    --stat-width <width>  generate diffstat with a given width
+    --stat-name-width <width>
+                          generate diffstat with a given name width
+    --stat-graph-width <width>
+                          generate diffstat with a given graph width
+    --stat-count <count>  generate diffstat with limited lines
+    --compact-summary     generate compact summary in diffstat
+    --binary              output a binary diff that can be applied
+    --full-index          show full pre- and post-image object names on the "index" lines
+    --color[=<when>]      show colored diff
+    --ws-error-highlight <kind>
+                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+    --abbrev[=<n>]        use <n> digits to display object names
+    --src-prefix <prefix>
+                          show the given source prefix instead of "a/"
+    --dst-prefix <prefix>
+                          show the given destination prefix instead of "b/"
+    --line-prefix <prefix>
+                          prepend an additional prefix to every line of output
+    --no-prefix           do not show any source or destination prefix
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --output-indicator-new <char>
+                          specify the character to indicate a new line instead of '+'
+    --output-indicator-old <char>
+                          specify the character to indicate an old line instead of '-'
+    --output-indicator-context <char>
+                          specify the character to indicate a context instead of ' '
+
+Diff rename options
+    -B, --break-rewrites[=<n>[/<m>]]
+                          break complete rewrite changes into pairs of delete and create
+    -M, --find-renames[=<n>]
+                          detect renames
+    -D, --irreversible-delete
+                          omit the preimage for deletes
+    -C, --find-copies[=<n>]
+                          detect copies
+    --find-copies-harder  use unmodified files as source to find copies
+    --no-renames          disable rename detection
+    --rename-empty        use empty blobs as rename source
+    --follow              continue listing the history of a file beyond renames
+    -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+
+Other diff options
+    --relative[=<prefix>]
+                          when run from subdir, exclude changes outside and show relative paths
+    -a, --text            treat all files as text
+    -R                    swap two inputs, reverse the diff
+    --exit-code           exit with 1 if there were differences, 0 otherwise
+    --quiet               disable all output of the program
+    --ext-diff            allow an external diff helper to be executed
+    --textconv            run external text conversion filters when comparing binary files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules in the diff generation
+    --submodule[=<format>]
+                          specify how differences in submodules are shown
+    --ita-invisible-in-index
+                          hide 'git add -N' entries from the index
+    --ita-visible-in-index
+                          treat 'git add -N' entries as real in the index
+    -S <string>           look for differences that change the number of occurrences of the specified string
+    -G <regex>            look for differences that change the number of occurrences of the specified regex
+    --pickaxe-all         show all changes in the changeset with -S or -G
+    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression
+    -O <file>             control the order in which files appear in the output
+    --rotate-to <path>    show the change in the specified path first
+    --skip-to <path>      skip the output to the specified path
+    --find-object <object-id>
+                          look for differences that change the number of occurrences of the specified object
+    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+                          select files by diff type
+    --output <file>       output to a specific file
+
+
+////////////////////////////////////////////////////////////
+
+$ git push --set-upstream origin Future_1  добавить ветку на github
+
+
+$ git checkout Future_1 переключиться на Future_1
+
+
+$ git checkout -b Future_1 создать ветку и сразу переключиться на нее
+
+$ git branch Future_2 создание ветки Future_2
+
+$ git checkout main
+$ git merge Future_1
+
+Wernerpy
+12345qwertA#
+
+$ git config --global user.name "[ИМЯ]"
+$ git config --global user.email "[адрес электронной почты]"
+$ git add .
+$ git init
+$ git commit -m "  "
+$ git push
+$ cd c:forgit
+$ git clone https://github.com/Wernerpy/test-.git
+$ git status
+$ git branch -a
+$ git log
+$ git checkout Future_1
+$ git log
+$ git checkout 68b39de299287728d5ef6dc99540f7083e1f56d5
+Note: switching to '68b39de299287728d5ef6dc99540f7083e1f56d5'.
+$ git switch Future_2 #переключает на ветку
+$ git switch -c Future_2
+$ git switch - #переключает с лога на ветку обратно работает после $ git checkout номер комента
+Switched to a new branch 'Future_2'
+
+$ git checkout main
+Werner@DESKTOP-NRFUTND MINGW32 /c/forgit (main)
+$ git merge Future_2
+Werner@DESKTOP-NRFUTND MINGW32 /c/forgit (main)
+$ git branch -d FUture_1
+Deleted branch FUture_1 (was 68b39de).
+$ git push origin HEAD:main #когда не на ветке находишься а в коммент 
+           и не перешел на ветку а сохраниться надо то пишешь так
+
+
+
+
+$ git push --set-upstream origin Future_1  добавить ветку на github
+
+
+$ git checkout Future_1 переключиться на Future_1
+
+
+$ git checkout -b Future_1 создать ветку и сразу переключиться на нее
+
+$ git branch Future_2 создание ветки Future_2
+
+$ git checkout main
+$ git merge Future_1
+
+Wernerpy
+12345qwertA#
+
+$ git config --global user.name "[ИМЯ]"
+$ git config --global user.email "[адрес электронной почты]"
+$ git add .
+$ git init
+$ git commit -m "  "
+$ git push
+$ cd c:forgit
+$ git clone https://github.com/Wernerpy/test-.git
+$ git status
+$ git branch -a
+$ git log
+$ git checkout Future_1
+$ git log
+$ git checkout 68b39de299287728d5ef6dc99540f7083e1f56d5
+Note: switching to '68b39de299287728d5ef6dc99540f7083e1f56d5'.
+$ git switch Future_2 #переключает на ветку
+$ git switch -c Future_2
+$ git switch - #переключает с лога на ветку обратно работает после $ git checkout номер комента
+Switched to a new branch 'Future_2'
+
+
+///////////////////////////////////////////////////...
+
+pyuic5 -x cal_1.ui -o calc.py
+$ git checkout main
+Switched to a new branch 'main'
+branch 'main' set up to track 'origin/main'.
+
+
+$ git push
+Everything up-to-date
+
+$ git pull
+Already up to date.
+
+
+git remote -v
+git push -u origin master
+
+
+
+$ git show
+commit 01659f061d6042ce7a30f911a22726bb4b093eb7 (HEAD -> master, origin/master)
+Author: Wernerpy <alex198424@gmail.com>
+Date:   Thu Oct 27 20:07:54 2022 +0600
+
+    commit commit
+
+diff --git a/foon.py b/foon.py
+index 3a4f6d2..72c3f9c 100644
+--- a/foon.py
++++ b/foon.py
+@@ -7,4 +7,4 @@ def foon(a,d,s):
+
+
+ foon(18,2,3)
+-
++foon(18,2,7)
+
+
+
+
+
+
+$ git remote add origin https://github.com/Wernerpy/foon.git
+
+$ git push origin master
+$ cd d:/forgit
+$ git init
+$ dir
+$ git status
+$ git clone https://github.com/Wernerpy/foon.git
+$ git add foon.py
+$ git commit -m "commit"
+$ git remote add Wernerpy https://github.com
+
+$ git remote add origin https://github.com/Wernerpy/foon.git
+
+
+
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 262 bytes | 87.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Wernerpy/foon/pull/new/master
+remote:
+To https://github.com/Wernerpy/foon.git
+ * [new branch]      master -> master
+
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 275 bytes | 91.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Wernerpy/foon.git
+   2532946..01659f0  master -> master
+
+$ git clone https://github.com/Wernerpy/foon.git myNew
+Cloning into 'myNew'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 9 (delta 1), reused 6 (delta 1), pack-reused 0
+Receiving objects: 100% (9/9), done.
+Resolving deltas: 100% (1/1), done.
+
+
+
+
+$ git clone https://github.com/Wernerpy/foon.git myNew
+Cloning into 'myNew'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+
+
+
+
+
+$ cd d:
+$ cd dir
+$ cd for_w_py_git
+$ git init
+Initialized empty Git repository in D:/for_w_py_git/.git/
+$ git status
+$ git add .
+$ git commit -m "fist commit"
+
+
+
+$ git config
+
+$ git config --global user.name "werner"
+
+$ git config --global user.email "alex198424@gmal.com"
+
+User@WIN-PKQRA1OSOHG MINGW64 ~
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=werner
+user.email=alex198424@gmal.com
+
+
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+
+
+
+///////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

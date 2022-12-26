@@ -1,0 +1,40 @@
+from math import *
+
+m = 83.19037500000002 #масса
+pi = 3.1415 #постоянная величина
+H = 5 #высота
+D = 60 #наружный диаметр
+p = 7.85 #g/cm2
+
+
+V = m/p
+S = V / H
+V * m / p * H
+
+d = sqrt(((D**2)-(V * m / p * H) / (pi / 4))/pi)
+
+#V * m / p * H = pi/4*(D**2 - d**2)
+
+print('   ') #
+
+print(' V  ',V) #V 10.5975 
+print(' S  ',S) #S  2.1195 
+print(' V * m / p * H  ',V * m / p * H) #561.53503125
+print(' Result1 ',561/(pi/4)) #561.53503125/pi/4
+print('Result2',D**2 - 714)
+print('Result3',sqrt(2886/pi))
+print('Result4',d)
+
+
+
+'''
+
+p = m/V
+V = m/p
+V = S * H
+S = V / H
+S = Sn - Sv = pi * D**2 / 4 - pi * d**2 / 4
+V * m / p * H = pi/4*(D**2 - d**2)
+
+
+'''

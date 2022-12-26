@@ -1,0 +1,62 @@
+#Площадь кольца через толщину и внещний диаметр
+
+from tkinter import *
+from math import *
+import math
+import re
+from functools import partial
+
+def is_valid(newval):
+    return re.match("^\\d{0,11}$", newval) is not None
+
+
+def show(lb4,ent1,ent2):
+    D = (ent1.get()) #диаметр
+    t = (ent2.get()) #толщина
+    math.pi = pi
+    S = pi / 4 * ((int(D)**2)-((int(D)-2*int(t))**2))
+    #lb4.config(text='Result = %d'%result)
+    
+    lb4['text']=S,'mm2'
+    return
+
+root = Tk()
+root.title('Площадь круга')
+root.geometry('500x500+10+10')
+
+number1 = StringVar()
+number2 = StringVar()
+
+check = (root.register(is_valid), '%P')
+
+can = Canvas(root,width=250, height=250)
+can.place(x=200,y=100)
+
+can.create_line(10,55,100,55)
+can.create_line(40,12,50,30)
+can.create_oval(10,100,100,10)
+can.create_oval(30,80,80,30)
+
+lb1 = Label(text='Площадь кольца через толщину и внешний диаметр')
+lb1.place(x=0,y=5)
+
+lb2 = Label(text='Диаметр D mm')
+lb2.place(x=28,y=25)
+
+lb3 = Label(text='Толщина T mm')
+lb3.place(x=28,y=65)
+
+lb4 = Label(text='Площадь:')
+lb4.place(x=200,y=63)
+
+ent1 = Entry(validate='key', validatecommand=check,textvariable=number1)
+ent1.place(x=30,y=45)
+
+ent2 = Entry(validate='key', validatecommand=check, textvariable=number2)
+ent2.place(x=30,y=85)
+
+show = partial(show,lb4,number1,number2)
+btn = Button(text='Вычислить',command=show)
+btn.place(x=50,y=115)
+
+root.mainloop()

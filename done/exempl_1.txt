@@ -1,0 +1,4553 @@
+
+https://mail.google.com/mail/u/0/#inbox
+pip install PyQt6
+
+https://mail.google.com/mail/u/0/#inbox
+
+/////////////////////////////////////////////////////////////////////////
+
+#https://www.tutorialkart.com/python/tkinter/button/
+#$ git push --set-upstream origin Future_1  добавить ветку на github
+
+from tkinter import *
+root = Tk()
+root["bg"] = "#159"
+root.geometry("300x300+0+0")
+root.title("test")
+root.resizable(0,0)
+
+def test():
+    print("test")
+    btn2.config(state=['disabled'])
+
+
+btn1 = Button(root, # форма расположение
+            text="test",  # текст 
+            font="Arial 10 bold", #шрифт
+            fg="blue", # цвет текста
+            bd=5, # отступы границы кнопки
+            bg="gray", # цвет кнопки в не нажатом положении
+            width=0, # ширина кнопки
+            height=0, # высота кнопки
+            padx=0, # ширина кнопки
+            pady=0, # высота кнопки
+            activebackground='gray', # цвет кнопки в нажатом положении
+            activeforeground="white", # цвет текста в нажатом положении
+            highlightbackground="green", # цвет рамки выделения когда виджит теряет фокус 
+            command=test # команда вызывает функцию
+            ) #state=['disabled'],  state=['active'], # статус кнопки актиности
+btn1.place(x=0, y=30) #anchor="c" 
+
+btn2 = Button(root,text="Disable")
+btn2.grid(row=0, column=0)
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+import re
+
+text = '+7(123)456-78-98'
+n = re.match(r'\+7\(\d{3}\)\d{3}-\d{2}-\d{2}', text)
+print(n)
+
+text = '''<point lon="40.8482" lat="52.6274" />
+<point lon="40.8559" lat="52.6361" />; <point lon="40.8614" lat="65.3251" /> 
+<point lon="40.8695" lat="52.9532" />, <point lon="52.3215" lat="41.2369" />
+'''
+ar = re.split(r"[\n;,]+", text)
+print(ar)
+
+text ='''Москва 
+Казань 
+Липитск 
+Тверь 
+Самара 
+Уфа 
+Пермь 
+Самарканд
+'''
+count = 0
+def replFindd(m):
+    global count
+    count +=1
+    return f"<option value='{count}'>{m.group (1)}</option>\n"
+    #return f"{count} {m.group (1)}\n"
+
+#list = re.sub(r"\s*(\w+)\s", r"\1\n", text)
+#list = re.sub(r"\s*(\w+)\s",replFindd, text)
+
+rx = re.compile(r"\s*(\w+)\")
+list, total = re.subn(r"\s*(\w+)\s", r"<option>\1</option>\n", text)
+
+
+print(list, total)
+
+
+
+
+
+
+= присвоение 
+== сравненеие
+
+
+# начало программы
+
+#модуль turtle импортировать все
+from turtle import *
+#модуль время дата
+from datetime import datetime
+ 
+#функция 1
+def jump(distanz, winkel=0): #прыжек winkel:хранить
+    penup() #поднять перо
+    right(winkel) #направо
+    forward(distanz) #вперед
+    left(winkel) #налево
+    pendown() #опустить перо
+
+#функция 2
+def hand(laenge, spitze): # длинная, топ
+    fd(laenge*1.15) #вперед
+    rt(90)          #направо
+    fd(spitze/2.0)  #вперед
+    lt(120)         #налево
+    fd(spitze)      #вперед
+    lt(120)         #налево
+    fd(spitze)      #вперед
+    lt(120)         #налево
+    fd(spitze/2.0)  #вперед
+
+#функция 
+def make_hand_shape(name, laenge, spitze):
+    reset()
+    jump(-laenge*0.15)
+    begin_poly()                #!!!!!!
+    hand(laenge, spitze)
+    end_poly()                  #!!!!!!
+    hand_form = get_poly()
+    register_shape(name, hand_form)
+
+#функция 
+def clockface(radius):
+    reset()
+    pensize(3)
+    for i in range(60):
+        jump(radius)
+        if i % 5 == 0:
+            fd(25)
+            jump(-radius-25)
+        else:
+            dot(3)
+            jump(-radius)
+        rt(6)
+
+#функция 
+def setup():
+    global second_hand, minute_hand, hour_hand, writer
+    mode("logo")
+    make_hand_shape("second_hand",125, 25) #размер стрелок
+    make_hand_shape("minute_hand",  130, 25) #размер стрелок
+    make_hand_shape("hour_hand", 90, 25) #размер стрелок
+    clockface(160)
+    second_hand = Turtle()
+    second_hand.shape("second_hand")
+    second_hand.color("gray20", "gray80")
+    minute_hand = Turtle()
+    minute_hand.shape("minute_hand")
+    minute_hand.color("blue1", "red1")
+    hour_hand = Turtle()
+    hour_hand.shape("hour_hand")
+    hour_hand.color("blue3", "red3")
+    for hand in second_hand, minute_hand, hour_hand:
+        hand.resizemode("user")
+        hand.shapesize(1, 1, 3)
+        hand.speed(0)
+    ht()
+    writer = Turtle()
+    writer.ht()
+    writer.pu()
+    writer.bk(85)
+
+#функция 
+def wochentag(t):
+    wochentag = ["Monday", "Tuesday", "Среда",
+        "Thursday", "Friday", "Saturday", "Sunday"]
+    return wochentag[t.weekday()]
+
+#функция 
+def datum(z):
+    monat = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June",
+             "July", "Aug.", "Sep.", "Октябрь.", "Nov.", "Dec."]
+    j = z.year
+    m = monat[z.month - 1]
+    t = z.day
+    return "%s %d %d" % (m, t, j)
+
+#функция 
+def tick():
+    t = datetime.today()
+    sekunde = t.second + t.microsecond*0.0000001
+    minute = t.minute + sekunde/60.0
+    stunde = t.hour + minute/60.0
+    try:
+        tracer(False)  # Terminator can occur here
+        writer.clear()
+        writer.home()
+        writer.forward(65)
+        writer.write(wochentag(t),
+                     align="center", font=("Courier", 14, "bold"))
+        writer.back(150)
+        writer.write(datum(t),
+                     align="center", font=("Courier", 14, "bold"))
+        writer.forward(85)
+        tracer(True)
+        second_hand.setheading(6*sekunde)  # or here
+        minute_hand.setheading(6*minute)
+        hour_hand.setheading(30*stunde)
+        tracer(True)
+        ontimer(tick, 100)
+    except Terminator:
+        pass  # turtledemo user pressed STOP
+
+#функция 
+def main():
+    tracer(False)
+    setup()
+    tracer(True)
+    tick()
+    return "EVENTLOOP"
+
+if __name__ == "__main__":
+    mode("logo")
+    msg = main()
+    print(msg)
+    mainloop()
+
+
+
+
+
+
+
+
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+from cProfile import label
+from tabnanny import check
+from tkinter import *
+from math import *
+import re
+from functools import partial
+
+def label_all():
+
+    lb1 = Label(text=' Вычисление внутреннего диаметра кольца ',font='Arial 13 bold', bg = '#999')
+    lb1.place(x=5,y=5)
+
+    lb2 = Label(text='Внешний диаметр D',bg='#999')
+    lb2.place(x=5,y=50)
+
+    lb7 = Label(text=' Внутренний диаметр d: ',bg='#999')
+    lb7.place(x=10,y=310)
+
+    lb27 = Label(text=' Ответ ',bg='#999')
+    lb27.place(x=200,y=310)
+
+    lb3 = Label(text='Высота H',bg='#999')
+    lb3.place(x=5, y=100)
+
+    lb4 = Label(text='Масса m', bg='#999')
+    lb4.place(x=5,y=150)
+
+    lb5 = Label(text='Плотность p',bg='#999')
+    lb5.place(x=5,y=200)
+
+    lb8 = Label(text='Внешний диаметр D',bg='#999')
+    lb8.place(x=205,y=50)
+
+    lb9 = Label(text='Высота H',bg='#999')
+    lb9.place(x=205, y=100)
+
+    lb10 = Label(text='Внутренний диаметр d', bg='#999')
+    lb10.place(x=205,y=150)
+
+    lb11 = Label(text='Плотность p',bg='#999')
+    lb11.place(x=205,y=200)
+
+def ent_all():
+
+
+    en1D = Entry(validate='key', validatecommand=check, textvariable=number1)
+    en1D.place(x=5,y=70)
+
+    en2H = Entry(validate='key', validatecommand=check, textvariable=number2)
+    en2H.place(x=5,y=120)
+
+    en3m = Entry(validate='key', validatecommand=check, textvariable=number3)
+    en3m.place(x=5,y=170)
+
+    en4p = Entry(validate='key', validatecommand=check,textvariable=number4)
+    en4p.place(x=5,y=220)
+
+    en5D = Entry(validate='key', validatecommand=check, textvariable=number5)
+    en5D.place(x=205,y=70)
+
+    en6H = Entry(validate='key', validatecommand=check, textvariable=number6)
+    en6H.place(x=205,y=120)
+
+    en7d = Entry(validate='key', validatecommand=check, textvariable=number7)
+    en7d.place(x=205,y=170)
+
+    en8p = Entry(validate='key', validatecommand=check,textvariable=number8)
+    en8p.place(x=205,y=220)
+
+def is_valid(newval):
+    return re.match("\\d{0,11}", newval) is not None
+
+def show(lb6,en1D,en2H,en3m,en4p):
+    D = (en1D.get())
+    H = (en2H.get())
+    m = (en3m.get())
+    p = (en4p.get())
+    D = float(D)
+    m = float(m)
+    p = float(p)
+    H = float(H)
+    print('D',D)
+    print('m',m)
+    print('p',p)
+    print('H',H)
+
+    #D = 100
+    #m = 46.22
+    m = round(m,2)
+    #H = 1
+
+    pi = 3.1415 
+    #p = 7.85 
+
+    V = m/p*1000
+    V = round(V,2)
+
+    S = V / H
+    S = round(S,2)
+    x = V * m / p * H 
+
+    S2 = (pi * D**2 / 4) - S 
+    S3 = S2/pi*4
+    S4 = sqrt(S3)
+    S4 = round(S4,2)
+    
+    print('')
+    print('Result D:',D)
+    print('Result d:',S4)
+    print('Result H:',H)
+    print('Result V:',V)
+    print('Result m:',m)
+    print('Result S:',S)
+
+    print('')
+
+    lb6['text'] = S4 ,'mm'
+    return
+
+def show1(lb26,en5D,en6H,en7d,en8p):
+    D = (en5D.get())
+    H = (en6H.get())
+    d = (en7d.get())
+    p = (en8p.get())
+    D = float(D)
+    d = float(d)
+    p = float(p)
+    H = float(H)
+    print('D',D)
+    print('d',d)
+    print('p',p)
+    print('H',H)
+
+    pi = float(3.14) #постоянная величина
+    T = float(D - d)/2 #толщина
+
+    m = float(pi * H * T * (d + T) / 1000 * p) #масса
+    m = round(m,2)
+
+    V1 = H * T * pi * (d + T) #объем
+    V1 = round(V1,2)
+    V2 = m/p #объем
+
+    S = pi / 4 * ((d + 2 * T)**2 - d**2) #площадь
+    S1 = pi / 4 * (D**2 - (D - 2 * T)**2) #площадь
+    S2 = pi / 4 * (D**2 - d**2) #площадь
+    S2 = round(S2,2)
+
+    C1 = pi * D #длина окружности
+    C2 = pi * (D - T)
+    C3 = pi * (d + T)
+
+
+    print(' ')
+
+    print('Result D:',D)
+    print('Result m:',m)
+    print('Result H:',H)
+    print('Result d:',d)
+    print('Result V1:',V1)
+    print('Result S2:',S2)
+
+    print(' ')
+
+    #lb26['text'] = 'D:',D,  'm:',m,' \n  H:',H,'d:',d,'V1:',V1,'S2:',S2
+    #return
+    lb26.config(text=' D: '+str(D)+' m: '+str(m)+' H; '+str(H))
+    lb27.config(text=' d: '+str(d)+' V: '+str(V1)+' S: '+str(S2))
+
+
+
+root = Tk()
+root.title('Площадь')
+root.geometry('500x400+10+10')
+root.resizable(0,0)
+root['bg']= '#999'
+
+lb6 = Label(text=' ....  ',bg='#999')
+lb6.place(x=15,y=330) 
+
+lb26 = Label(text=' .... ',bg='#999')
+lb26.place(x=205,y=330) 
+
+lb27 = Label(text=' .... ',bg='#999')
+lb27.place(x=205,y=360) 
+
+number1 = StringVar()
+number2 = StringVar()  
+number3 = StringVar()
+number4 = StringVar()
+number5 = StringVar()
+number6 = StringVar()  
+number7 = StringVar()
+number8 = StringVar()
+
+
+check = (root.register(is_valid), '%P')
+
+label_all()
+ent_all()
+
+show = partial(show,lb6,number1,number2,number3,number4)
+show1 = partial(show1,lb26,number5,number6,number7,number8)
+
+btn1 = Button(text='Вычислить', font='Arial 11 bold',bg='grey',
+              bd=5,width=15,height=1,command=show)
+btn1.place(x=6,y=250)
+
+btn2 = Button(text='Вычислить', font='Arial 11 bold',bg='grey',
+              bd=5,width=15,height=1,command=show1)
+btn2.place(x=200,y=250)
+
+
+root.mainloop()
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+from math import *
+
+
+D = 100#mm наружный диаметр
+p = 7.85 #g/cm2
+H = 1 #mm
+d = 50 #mm
+
+pi = float(3.14) #постоянная величина
+T = float(D - d)/2 #толщина
+
+m = float(pi * H * T * (d + T) / 1000 * p) #масса
+m = round(m,2)
+
+V1 = H * T * pi * (d + T) #объем
+V1 = round(V1,2)
+V2 = m/p #объем
+
+S = pi / 4 * ((d + 2 * T)**2 - d**2) #площадь
+S1 = pi / 4 * (D**2 - (D - 2 * T)**2) #площадь
+S2 = pi / 4 * (D**2 - d**2) #площадь
+S2 = round(S2,2)
+
+C1 = pi * D #длина окружности
+C2 = pi * (D - T)
+C3 = pi * (d + T)
+
+
+print(' ')
+
+print('Result D:',D)
+print('Result m:',m)
+print('Result H:',H)
+print('Result d:',d)
+print('Result V1:',V1)
+print('Result S2:',S2)
+
+print(' ')
+
+
+////////////////////////////////////////////////////////////////////////
+
+#https://www.tutorialkart.com/python/tkinter/button/
+#$ git push --set-upstream origin Future_1  добавить ветку на github
+
+from tkinter import *
+root = Tk()
+root["bg"] = "#159"
+root.geometry("300x300+0+0")
+root.title("test")
+root.resizable(0,0)
+
+def test():
+    print("test")
+    btn2.config(state=['disabled'])
+
+
+btn1 = Button(root, # форма расположение
+            text="test",  # текст 
+            font="Arial 10 bold", #шрифт
+            fg="blue", # цвет текста
+            bd=5, # отступы границы кнопки
+            bg="gray", # цвет кнопки в не нажатом положении
+            width=0, # ширина кнопки
+            height=0, # высота кнопки
+            padx=0, # ширина кнопки
+            pady=0, # высота кнопки
+            activebackground='gray', # цвет кнопки в нажатом положении
+            activeforeground="white", # цвет текста в нажатом положении
+            highlightbackground="green", # цвет рамки выделения когда виджит теряет фокус 
+            command=test # команда вызывает функцию
+            ) #state=['disabled'],  state=['active'], # статус кнопки актиности
+btn1.place(x=0, y=30) #anchor="c" 
+
+btn2 = Button(root,text="Disable")
+btn2.grid(row=0, column=0)
+
+
+
+
+
+
+
+root.mainloop()
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+import re
+
+text = '+7(123)456-78-98'
+n = re.match(r'\+7\(\d{3}\)\d{3}-\d{2}-\d{2}', text)
+print(n)
+
+text = '''<point lon="40.8482" lat="52.6274" />
+<point lon="40.8559" lat="52.6361" />; <point lon="40.8614" lat="65.3251" /> 
+<point lon="40.8695" lat="52.9532" />, <point lon="52.3215" lat="41.2369" />
+'''
+ar = re.split(r"[\n;,]+", text)
+print(ar)
+
+text ='''Москва 
+Казань 
+Липитск 
+Тверь 
+Самара 
+Уфа 
+Пермь 
+Самарканд
+'''
+count = 0
+def replFindd(m):
+    global count
+    count +=1
+    return f"<option value='{count}'>{m.group (1)}</option>\n"
+    #return f"{count} {m.group (1)}\n"
+
+#list = re.sub(r"\s*(\w+)\s", r"\1\n", text)
+#list = re.sub(r"\s*(\w+)\s",replFindd, text)
+
+rx = re.compile(r"\s*(\w+)\")
+list, total = re.subn(r"\s*(\w+)\s", r"<option>\1</option>\n", text)
+
+
+print(list, total)
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+from math import *
+
+pi = float(3.14) #постоянная величина
+W = float(3.40) #высота
+#D_in = float(32.92) #внутренний диаметр
+D_out =float(39.72) #внешний диаметр
+T = float(3.40) #толщина
+p = float(0.04) #плотность
+
+S = 387.75232
+
+#m = float(pi * W * T * (D_in + T) / 1000 * p) #масса
+#V = W * T * pi * (D_in + T) #объем
+#S = pi / 4 * ((D_in + 2 * T)**2 - D_in**2) #площадь
+#S1 = pi / 4 * (D_out**2 - (D_out - 2 * T)**2) #площадь
+#S2 = pi / 4 * (D_out**2 - D_in**2) #площадь
+
+#D_out  = sqrt(S / (pi/4) + (D_in**2))
+#D_in = sqrt(S / pi/4 + (D_out**2))-T*2
+
+
+
+#print('Масса кольца: ',m,'g/cm3')
+print('Объём кольца: ',V,'cm3')
+#print('Площадь кольца D_in: ',S,'mm2')
+#print('Площадь кольца D_out: ',S1,'mm2')
+#print('Площадь кольца D_out D_in: ',S2,'mm2')
+#print('Внешний диаметр кольца: ',D_out,'mm')
+#print('Внутренний диаметр кольца: ',D_in,'mm')
+#print('Толщина кольца: ',(D_out - D_in)/2,'mm')
+
+
+
+'''
+
+from math import *
+import math
+
+T = 10 #толщина
+S = 1256.6370614359173 #mm2
+
+math.pi = pi
+
+
+D = 50 #mm
+d = 30 #mm
+
+D = sqrt(S / (pi/4) + (d**2))
+d = sqrt(S / pi/4 + (D**2))-T*2
+
+S = pi / 4 * (D**2 - d**2)
+
+print('    ')
+print('Площадь S 401.33846149609604: ',S)
+print('Диаметр внешний D 40:         ',D)
+print('Диаметр внутренний d 33:      ',d)
+print('    ')
+'''
+
+
+
+
+//////////////////////////////////////////////////////
+
+from math import *
+
+
+m = float(0.06260748031999999) #масса
+W = float(3.40) #высота
+p = float(0.04) #плотность
+D_out =float(39.72) #внешний диаметр
+
+pi = float(3.14) #постоянная величина
+
+V = m/p #объем
+C = pi * D_out #L
+
+D_in = float(32.92) #внутренний диаметр
+T = float(3.40) #толщина
+
+m1 = float(pi * W * T * (D_in + T) / 1000 * p) #масса
+
+V1 = W * T * pi * (D_in + T)/1000 #объем
+
+S = pi / 4 * ((D_in + 2 * T)**2 - D_in**2) #площадь
+S1 = pi / 4 * (D_out**2 - (D_out - 2 * T)**2) #площадь
+S2 = pi / 4 * (D_out**2 - D_in**2) #площадь
+
+#D_out  = sqrt(S / (pi/4) + (D_in**2))
+#D_in = sqrt(S / pi/4 + (D_out**2))-T*2
+
+print('Масса кольца: ',m,'g/cm3')
+print('Масса кольца m1: ',m1,'g/cm3')
+print('Объём кольца V2: ',V,'cm3')
+print('Объём кольца V1: ',V1,'cm3')
+print('Площадь кольца0: ',S,'mm2')
+print('Плотность кольца p: ',p,' ')
+print('Высота кольца W: ',W,'mm')
+print('Площадь кольца D_out: ',S1,'mm2')
+print('длина кольца D_out: ',C,'mm')
+print('Площадь кольца D_out D_in: ',S2,'mm2')
+print('Внешний диаметр кольца: ',D_out,'mm')
+print('Внутренний диаметр кольца: ',D_in,'mm')
+print('Толщина кольца: ',(D_out - D_in)/2,'mm')
+
+
+
+'''
+
+from math import *
+import math
+
+T = 10 #толщина
+S = 1256.6370614359173 #mm2
+
+math.pi = pi
+
+
+D = 50 #mm
+d = 30 #mm
+
+D = sqrt(S / (pi/4) + (d**2))
+d = sqrt(S / pi/4 + (D**2))-T*2
+
+S = pi / 4 * (D**2 - d**2)
+
+print('    ')
+print('Площадь S 401.33846149609604: ',S)
+print('Диаметр внешний D 40:         ',D)
+print('Диаметр внутренний d 33:      ',d)
+print('    ')
+'''
+
+
+/////////////////////////////////////////////////////
+
+#формула m = p*v p плотность v обьем
+#формула ml = ABLp
+#формула mkp = b2(A+B)Lp
+# A,B ширина сторон профиля. b толщина стенки изделия, L длина , p плотность металла
+#площадь сечения 
+#для листа умножаем толщину и ширину
+#для трубы квадратной складываем величину сторон и умножаем на толщину стенки и умножаем на длину изделия 
+# плотность = масса / обьем p=m/v
+# g/cm3
+# # плотность железа p=7900кг/м3 
+
+
+#V = 10 #    литр = 0,01m3 
+
+#m = 14 # кг
+
+#p = m/V
+#p = m / 0.01 #m3
+
+#print(' плотность = ',p,' кг/м3')
+
+#7800 m3 / 7.8 cm3 плотность железа 
+
+
+#D1 внутренний диаметр кольца
+#D2 внешний диаметр кольца
+#T  толщина проката или проволки
+#C  длина окружности
+#C = pi * (D1 + T) or C = pi * (D2 - T)
+#масса кольца прямоугольного сечения
+# V = W * T * pi *(D + T)
+# T толщина 
+# W ширина h высота
+# D внутренний диаметр
+# масса такого кольца
+# m = pi * W * T *(D + t) / 1000 * p
+'''
+
+#m масса
+m1 = m2 = m3 = m4 = 100
+#p плотность
+p1 = 1
+p2 = 1.1
+p3 = 1.2
+p4 = 1.3
+#W высота
+W1 = W2 = W3 = W4 = 10
+#D диаметр
+D1 = d1
+D2 = d2
+D3 = d3
+D4 = 10
+#T толщина 
+T1 = t1 
+T2 = t2
+T3 = t3
+T4 = t4
+
+
+D1,D2,D3 = C / pi
+
+#D1 = (pi * (D11 + T1)) / pi
+
+#C1 = pi * (D11 + T1)      or      C1 = pi * (D21 - T1)
+#C2 = pi * (D12 + T2)      or      C2 = pi * (D22 - T2)
+#C3 = pi * (D13 + T3)      or      C3 = pi * (D23 - T3)
+
+'''
+x = 3
+hh = 1*2*x*(4+5)/1000*6 #0.324
+print(hh)
+
+
+
+
+from math import *
+import math
+
+T = 10 #толщина
+S = 1256.6370614359173 #mm2
+
+math.pi = pi
+
+
+D = 50 #mm
+d = 30 #mm
+
+D = sqrt(S / (pi/4) + (d**2))
+d = sqrt(S / pi/4 + (D**2))-T*2
+
+S = pi / 4 * (D**2 - d**2)
+
+print('    ')
+print('Площадь S 401.33846149609604: ',S)
+print('Диаметр внешний D 40:         ',D)
+print('Диаметр внутренний d 33:      ',d)
+print('    ')
+
+
+from math import *
+
+
+m = float(0.06260748031999999) #масса
+W = float(3.40) #высота
+p = float(0.04) #плотность
+D_out =float(39.72) #внешний диаметр
+
+pi = float(3.14) #постоянная величина
+
+V = m/p #объем
+C = pi * D_out #L
+
+D_in = float(32.92) #внутренний диаметр
+T = float(3.40) #толщина
+
+m1 = float(pi * W * T * (D_in + T) / 1000 * p) #масса
+
+V1 = W * T * pi * (D_in + T)/1000 #объем
+
+S = pi / 4 * ((D_in + 2 * T)**2 - D_in**2) #площадь
+S1 = pi / 4 * (D_out**2 - (D_out - 2 * T)**2) #площадь
+S2 = pi / 4 * (D_out**2 - D_in**2) #площадь
+
+#D_out  = sqrt(S / (pi/4) + (D_in**2))
+#D_in = sqrt(S / pi/4 + (D_out**2))-T*2
+
+print('Масса кольца: ',m,'g/cm3')
+print('Масса кольца m1: ',m1,'g/cm3')
+print('Объём кольца V2: ',V,'cm3')
+print('Объём кольца V1: ',V1,'cm3')
+print('Площадь кольца0: ',S,'mm2')
+print('Плотность кольца p: ',p,' ')
+print('Высота кольца W: ',W,'mm')
+print('Площадь кольца D_out: ',S1,'mm2')
+print('длина кольца D_out: ',C,'mm')
+print('Площадь кольца D_out D_in: ',S2,'mm2')
+print('Внешний диаметр кольца: ',D_out,'mm')
+print('Внутренний диаметр кольца: ',D_in,'mm')
+print('Толщина кольца: ',(D_out - D_in)/2,'mm')
+
+
+
+'''
+
+from math import *
+import math
+
+T = 10 #толщина
+S = 1256.6370614359173 #mm2
+
+math.pi = pi
+
+
+D = 50 #mm
+d = 30 #mm
+
+D = sqrt(S / (pi/4) + (d**2))
+d = sqrt(S / pi/4 + (D**2))-T*2
+
+S = pi / 4 * (D**2 - d**2)
+
+print('    ')
+print('Площадь S 401.33846149609604: ',S)
+print('Диаметр внешний D 40:         ',D)
+print('Диаметр внутренний d 33:      ',d)
+print('    ')
+'''
+
+
+
+
+
+
+
+
+
+from turtle import Turtle
+import turtle
+
+t = turtle
+
+t.speed(11)
+
+t.up()
+t.goto(0,0)
+t.down() 
+
+for i in range(45):     #1
+    t.forward(100)
+    t.left(184)
+    t.forward(100)
+
+
+t.up()
+t.goto(0,200)
+t.down()    
+
+for i in range(180):    #2
+    t.forward(100)
+    t.left(182)
+    t.forward(100)
+
+
+t.up()
+t.goto(0,-200)
+t.down()    
+
+for i in range(182):     #3
+    t.forward(100)
+    t.left(182)
+    t.forward(100)
+
+
+t.up()
+t.goto(250,0)
+t.down()    
+
+for i in range(91):     #4
+    t.forward(100)
+    t.left(183)
+    t.forward(100)
+
+t.up()
+t.goto(500,0)
+t.down()    
+
+for i in range(15):     #5
+    t.forward(100)
+    t.left(200)
+    t.forward(100)
+
+t.up()
+t.goto(-250,0)
+t.down()    
+
+for i in range(30):     #6
+    t.speed(4)
+    t.forward(100)
+    t.left(189)
+    t.forward(100)
+
+t.up()
+t.goto(-500,0)
+t.down()    
+
+for i in range(25):     #7
+    
+    t.forward(100)
+    t.left(195)
+    t.forward(100)
+
+
+t.up()
+t.goto(0,-200)
+t.down()  
+
+t.circle(200)
+
+input()
+
+from turtle import *
+
+t = Turtle()
+
+x1widght = -5
+y1height = 5
+x2widght = 0
+y2height = 0
+k = 0
+
+t.speed(1)
+t.up()
+t.goto(-800,0)
+t.pensize(5)
+t.down()
+t.goto(800,-0)
+t.up()
+t.goto(0,400)
+t.down()
+t.goto(0,-400)
+
+for i in range(50):
+    k = k + 1
+    t.speed(5) #скорость
+    t.up()
+    t.goto(0,x1widght)
+    t.pensize(1)
+    t.down()
+    #t.color("green", "red")
+    t.color("#285078", "#a0c8f0")
+    t.begin_fill()
+    #t.heading() #????????
+    t.circle(y1height)
+    t.end_fill() #??????
+    t.degrees(400.0)
+    #t.distance(90,100) #дистанция, ????????????
+    t.end_fill()
+    
+    t.forward(200) #вперед
+    t.dot(60, "blue"); #рисует круг
+    print(round(t.xcor(), 5)) #выводит кординаты на экран
+    print(round(t.ycor(), 5)) #выводит кординаты на экран
+    t.backward(600) #назад
+    t.fillcolor('white') #цвет курсора
+    t.right(45) #поворот на 45 градусов в право
+    t.left(20) #поворот на 20 градусов в лево
+    t.setpos(60,30) #устанавливает позицию
+    t.setx(10) #устанавливает позицию
+    t.sety(-10) #устанавливает позицию
+    #t.setheading(270) #Set the orientation 
+    #home() #???
+    t.circle(50) #рисует круг
+    #t.degrees(400.0) #????????????
+    #t.radians() #????????????
+    
+    t.undo() #отменяет предыдущее действие Undo (repeatedly) the last turtle action(s). 
+    t.color("#555")
+    t.stamp() #рисует стрелку
+    t.fd(100) #рисует линию
+    t.clearstamps() #удаляет все штампы
+    print(k)
+    t.write('hello', move=False, align='left', font=('Arial', 20, 'normal'))
+    #t.write((0.0), True)
+    if k>2:
+       #reset() #?????????
+       #clear() #??????
+       print('k > 2')
+
+    x1widght = x1widght - 5
+    y1height = y1height + 5
+    x2widght = x2widght + 5
+
+input()
+
+
+
+from turtle import *
+
+t = Turtle()
+
+x1widght = -5
+y1height = 5
+x2widght = 0
+y2height = 0
+k = 0
+
+t.speed(20)
+t.up()
+t.goto(-800,0)
+t.pensize(5)
+t.down()
+t.goto(800,-0)
+t.up()
+t.goto(0,400)
+t.down()
+t.goto(0,-400)
+
+for i in range(50):
+    k = k + 1
+    t.speed(5) #скорость
+    t.up()
+    t.goto(0,x1widght)
+    t.pensize(1)
+    t.down()
+    #t.color("green", "red")
+    t.color("#285078", "#a0c8f0")
+    t.begin_fill()
+    #t.heading() #????????
+    t.circle(y1height)
+    t.end_fill() #??????
+    t.degrees(400.0)
+    #t.distance(90,100) #дистанция, ????????????
+    t.end_fill()
+    
+    t.forward(200) #вперед
+    t.dot(60, "blue"); #рисует круг
+    print(round(t.xcor(), 5)) #выводит кординаты на экран
+    print(round(t.ycor(), 5)) #выводит кординаты на экран
+    t.backward(600) #назад
+    t.fillcolor('white') #цвет курсора
+    t.right(45) #поворот на 45 градусов в право
+    t.left(20) #поворот на 20 градусов в лево
+    t.setpos(60,30) #устанавливает позицию
+    t.setx(10) #устанавливает позицию
+    t.sety(-10) #устанавливает позицию
+    #t.setheading(270) #Set the orientation 
+    #home() #???
+    t.circle(50) #рисует круг
+    #t.degrees(400.0) #????????????
+    #t.radians() #????????????
+    
+    t.undo() #отменяет предыдущее действие Undo (repeatedly) the last turtle action(s). 
+    t.color("#555")
+    t.stamp() #рисует стрелку
+    t.fd(100) #рисует линию
+    t.clearstamps() #удаляет все штампы
+    print(k)
+    t.write('hello', move=False, align='left', font=('Arial', 20, 'normal'))
+   # t.write((0,0), True)
+    if k>2:
+       #reset() #?????????
+       #clear() #??????
+       print('k > 2')
+
+
+    x1widght = x1widght - 5
+    y1height = y1height + 5
+    x2widght = x2widght + 5
+
+input()
+
+
+
+
+
+
+width=500, height=500, bg='white
+writer = Turtle() с большой буквы
+
+
+#!/usr/bin/env python3
+"""      turtle-example-suite:
+
+        tdemo_bytedesign.py
+
+An example adapted from the example-suite
+of PythonCard's turtle graphics.
+
+It's based on an article in BYTE magazine
+Problem Solving with Logo: Using Turtle
+Graphics to Redraw a Design
+November 1982, p. 118 - 134
+
+-------------------------------------------
+
+Due to the statement
+
+t.delay(0)
+
+in line 152, which sets the animation delay
+to 0, this animation runs in "line per line"
+mode as fast as possible.
+"""
+
+from turtle import Turtle, mainloop
+from time import perf_counter as clock
+
+# wrapper for any additional drawing routines
+# that need to know about each other
+class Designer(Turtle):
+
+    def design(self, homePos, scale):
+        self.up()
+        for i in range(5):
+            self.forward(64.65 * scale)
+            self.down()
+            self.wheel(self.position(), scale)
+            self.up()
+            self.backward(64.65 * scale)
+            self.right(72)
+        self.up()
+        self.goto(homePos)
+        self.right(36)
+        self.forward(24.5 * scale)
+        self.right(198)
+        self.down()
+        self.centerpiece(46 * scale, 143.4, scale)
+        self.getscreen().tracer(True)
+
+    def wheel(self, initpos, scale):
+        self.right(54)
+        for i in range(4):
+            self.pentpiece(initpos, scale)
+        self.down()
+        self.left(36)
+        for i in range(5):
+            self.tripiece(initpos, scale)
+        self.left(36)
+        for i in range(5):
+            self.down()
+            self.right(72)
+            self.forward(28 * scale)
+            self.up()
+            self.backward(28 * scale)
+        self.left(54)
+        self.getscreen().update()
+
+    def tripiece(self, initpos, scale):
+        oldh = self.heading()
+        self.down()
+        self.backward(2.5 * scale)
+        self.tripolyr(31.5 * scale, scale)
+        self.up()
+        self.goto(initpos)
+        self.setheading(oldh)
+        self.down()
+        self.backward(2.5 * scale)
+        self.tripolyl(31.5 * scale, scale)
+        self.up()
+        self.goto(initpos)
+        self.setheading(oldh)
+        self.left(72)
+        self.getscreen().update()
+
+    def pentpiece(self, initpos, scale):
+        oldh = self.heading()
+        self.up()
+        self.forward(29 * scale)
+        self.down()
+        for i in range(5):
+            self.forward(18 * scale)
+            self.right(72)
+        self.pentr(18 * scale, 75, scale)
+        self.up()
+        self.goto(initpos)
+        self.setheading(oldh)
+        self.forward(29 * scale)
+        self.down()
+        for i in range(5):
+            self.forward(18 * scale)
+            self.right(72)
+        self.pentl(18 * scale, 75, scale)
+        self.up()
+        self.goto(initpos)
+        self.setheading(oldh)
+        self.left(72)
+        self.getscreen().update()
+
+    def pentl(self, side, ang, scale):
+        if side < (2 * scale): return
+        self.forward(side)
+        self.left(ang)
+        self.pentl(side - (.38 * scale), ang, scale)
+
+    def pentr(self, side, ang, scale):
+        if side < (2 * scale): return
+        self.forward(side)
+        self.right(ang)
+        self.pentr(side - (.38 * scale), ang, scale)
+
+    def tripolyr(self, side, scale):
+        if side < (4 * scale): return
+        self.forward(side)
+        self.right(111)
+        self.forward(side / 1.78)
+        self.right(111)
+        self.forward(side / 1.3)
+        self.right(146)
+        self.tripolyr(side * .75, scale)
+
+    def tripolyl(self, side, scale):
+        if side < (4 * scale): return
+        self.forward(side)
+        self.left(111)
+        self.forward(side / 1.78)
+        self.left(111)
+        self.forward(side / 1.3)
+        self.left(146)
+        self.tripolyl(side * .75, scale)
+
+    def centerpiece(self, s, a, scale):
+        self.forward(s); self.left(a)
+        if s < (7.5 * scale):
+            return
+        self.centerpiece(s - (1.2 * scale), a, scale)
+
+def main():
+    t = Designer()
+    t.speed(0)
+    t.hideturtle()
+    t.getscreen().delay(0)
+    t.getscreen().tracer(0)
+    at = clock()
+    t.design(t.position(), 2)
+    et = clock()
+    return "runtime: %.2f sec." % (et-at)
+
+if __name__ == '__main__':
+    msg = main()
+    print(msg)
+    mainloop()
+
+        
+
+         CLOCK
+
+from turtle import *
+from datetime import datetime
+
+def jump(distanz, winkel=0):
+    penup()
+    right(winkel)
+    forward(distanz)
+    left(winkel)
+    pendown()
+
+def hand(laenge, spitze):
+    fd(laenge*1.15)
+    rt(90)
+    fd(spitze/2.0)
+    lt(120)
+    fd(spitze)
+    lt(120)
+    fd(spitze)
+    lt(120)
+    fd(spitze/2.0)
+
+def make_hand_shape(name, laenge, spitze):
+    reset()
+    jump(-laenge*0.15)
+    begin_poly()
+    hand(laenge, spitze)
+    end_poly()
+    hand_form = get_poly()
+    register_shape(name, hand_form)
+
+def clockface(radius):
+    reset()
+    pensize(7)
+    for i in range(60):
+        jump(radius)
+        if i % 5 == 0:
+            fd(25)
+            jump(-radius-25)
+        else:
+            dot(3)
+            jump(-radius)
+        rt(6)
+
+def setup():
+    global second_hand, minute_hand, hour_hand, writer
+    mode("logo")
+    make_hand_shape("second_hand", 125, 25)
+    make_hand_shape("minute_hand",  130, 25)
+    make_hand_shape("hour_hand", 90, 25)
+    clockface(160)
+    second_hand = Turtle()
+    second_hand.shape("second_hand")
+    second_hand.color("gray20", "gray80")
+    minute_hand = Turtle()
+    minute_hand.shape("minute_hand")
+    minute_hand.color("blue1", "red1")
+    hour_hand = Turtle()
+    hour_hand.shape("hour_hand")
+    hour_hand.color("blue3", "red3")
+    for hand in second_hand, minute_hand, hour_hand:
+        hand.resizemode("user")
+        hand.shapesize(1, 1, 3)
+        hand.speed(0)
+    ht()
+    writer = Turtle()
+    #writer.mode("logo")
+    writer.ht()
+    writer.pu()
+    writer.bk(85)
+
+def wochentag(t):
+    wochentag = ["Monday", "Tuesday", "Wednesday",
+        "Thursday", "Friday", "Saturday", "Sunday"]
+    return wochentag[t.weekday()]
+
+def datum(z):
+    monat = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June",
+             "July", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."]
+    j = z.year
+    m = monat[z.month - 1]
+    t = z.day
+    return "%s %d %d" % (m, t, j)
+
+def tick():
+    t = datetime.today()
+    sekunde = t.second + t.microsecond*0.000001
+    minute = t.minute + sekunde/60.0
+    stunde = t.hour + minute/60.0
+    try:
+        tracer(False)  # Terminator can occur here
+        writer.clear()
+        writer.home()
+        writer.forward(65)
+        writer.write(wochentag(t),
+                     align="center", font=("Courier", 14, "bold"))
+        writer.back(150)
+        writer.write(datum(t),
+                     align="center", font=("Courier", 14, "bold"))
+        writer.forward(85)
+        tracer(True)
+        second_hand.setheading(6*sekunde)  # or here
+        minute_hand.setheading(6*minute)
+        hour_hand.setheading(30*stunde)
+        tracer(True)
+        ontimer(tick, 100)
+    except Terminator:
+        pass  # turtledemo user pressed STOP
+
+def main():
+    tracer(False)
+    setup()
+    tracer(True)
+    tick()
+    return "EVENTLOOP"
+
+if __name__ == "__main__":
+    mode("logo")
+    msg = main()
+    print(msg)
+    mainloop()
+
+
+
+
+
+print('Enter cycle number')
+n = int(input())
+k = 0
+
+for i in range(0,n):
+    print('Enter the number to be divisible by 4 and not divisible by 7')
+    num = int(input())
+    if num % 4 ==0 and num % 7 != 0:
+        k = k +1
+
+print('The number of numbers is ', k, ' divided by 4 and not divided by 7')
+
+
+n = int(input())
+k = 0
+
+for i in range(0,n):
+    num = int(input())
+    if num % 4 ==0 and num % 7 != 0:
+        k = k +1
+
+print(k)
+
+
+
+'''
+sp1 = ('text0','text1','text2','text3')
+print(sp1)
+print(sp1[2])
+
+print(sp1[::2])
+'''
+s1 = {'k': 'zn','collor': 'black', 'дерево':'листик'}
+
+print(s1)
+
+print(s1['k'])
+s1['машина'] = 'двигатель'
+
+print(s1)
+
+s1['collor'] = 'white'
+print(s1)
+
+del s1['дерево']
+
+print(s1)
+
+
+
+sp1 = ['0','1','2','3','4' ]
+print(sp1)
+
+print(sp1[3])
+a = 'day0'
+sp1[3] = 'сено'
+sp1[0] = a
+print(sp1[3])
+sp1.append('width')
+del sp1[1]
+
+print(sp1)
+
+sp2 = [221,257,88,663,744,999,65,45,2,0]
+sp3 = [21,'text',2563,'text']
+
+sp4 = [sp1, sp2, sp3]
+
+print(sp4)
+
+print(sp4[1][1])
+
+sp5 = [1,2,3]
+sp6 = [4,5,6]
+sp7 = sp5+sp6
+print(sp7)
+
+sp8 = [5,9]
+sp9 = sp8 * 10
+print(sp9)
+
+print(sp1[:2])
+print(sp1[1:3])
+print(sp1[::2])
+
+
+
+#t=2+2
+#t=30-16
+#t=2*36
+#t=100/2
+#t=100//2
+#t = 10 % 12
+#print(t)
+"""
+arr = [1,2,3,4,5,6,7,8,9,10]
+for i in arr:
+    if i % 2 == 0:
+        print(i)
+
+"""
+"""
+print(0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+
+      0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1)
+"""
+
+
+
+
+'''
+a = 0.1 
+for i in range(13):
+    a += 0.1
+print(a)
+
+
+try:
+    print(24 / 0)
+except Exception as e:
+    print(e)
+DivisionByZero
+
+'''
+'''
+from array import *
+data = array('i',[2,5,4,0,8]) 
+#data.insert(4,10)
+#data.pop(0)
+for i in data:
+    print(i)
+    print(len(data))
+'''
+'''
+
+arr = [10,11,0,5,0,8,0,9,0,7,0,321]
+
+for i in arr:
+    a = i
+    b = None
+    if a == 0:
+        print('!!!!!!!! делитель равен нулю !!!!!!!!')
+    else:
+        b = 345/a
+        print(' результат = ' + str(b))
+'''
+
+
+d1 = [1,4,5]
+for i in range(2):
+    d2 = []
+    for j in range(2):
+        d2.append(1)
+    d1.append(d2)
+
+print(d1)
+print(d2)
+print(i)
+
+
+
+
+
+from random import randint
+for i in range(1,11):
+    s=0
+    print(' ',2**i)
+    i*=i
+    print(i,"/")
+
+
+import time
+from time import gmtime, strftime
+
+x = 0
+def foo():
+    time.sleep(1)
+
+while True:
+    n = strftime('%a,%d %b %Y %H:%M:%S ', gmtime())
+    x +=1
+    print(x)
+    print(n)
+    foo()
+   #break
+t = time.gmtime(0)
+print(t)
+
+
+
+
+
+
+import time
+from time import gmtime, strftime
+
+x = 0
+def foo():
+    time.sleep(1n)
+
+while True:
+    n = strftime('%a,%d %b %Y %H:%M:%S ', gmtime())
+    x +=1
+    print(x)
+    print(n)
+    foo()
+   #break
+t = time.gmtime(0)
+print(t)
+
+time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=1, tm_isdst=0)
+1111111111111111111111111111111111111111111111
+
+import time
+
+def foo():
+    time.sleep(2.5)
+
+
+t0 = time.clock()
+foo()
+print(time.clock() - t0, 'Время обработки в секундах')
+
+t0 = time.time()
+foo()
+print(time.time() - t0, 'Время стены с секундах')
+
+111111111111111111111111111111111111111111111
+
+#program for translating from Russian into English
+
+from cgitb import text
+from email import header
+from fnmatch import translate
+from gettext import translation
+from tkinter import *
+from tkinter import ttk
+from googletrans import Translator
+
+
+#text translation function
+def translate():
+    for language, suffix in languages.items():
+        if comboTwo.get() == language:
+            text = t_input.get('1.0', END)
+            translation = translator.translate(text, dest=suffix)
+            t_output.delete('1.0', END)
+            t_output.insert('1.0',translation.text)
+
+
+#creating the main window
+root = Tk()
+root.geometry('500x340')
+root.title('Переводчик')
+root.resizable(0,0)
+root['bg'] = '#555'
+
+#class
+translator = Translator()
+
+#dictionary with languages
+languages = {'Русский': 'ru', 'Английский': 'en', 'Французский': 'fr'}
+
+#top Frame
+header_frame = Frame(root, bg='#783')
+
+#stretch in length
+header_frame.pack(fill=X)
+
+#central arrow Frame
+header_frame.grid_columnconfigure(0, weight=1)
+header_frame.grid_columnconfigure(1, weight=1)
+header_frame.grid_columnconfigure(2, weight=1)
+
+#first left Combobox
+comboOne = ttk.Combobox(header_frame,values=[lang for lang in languages], state='readonly')
+comboOne.current(0)
+comboOne.grid(row=0, column=0, pady=0, padx=0)
+
+#Label with an arrow at the top
+label = Label(header_frame, fg='black', bg='#783', font='Arial 20 bold',text='=>')
+label.grid(row=0, column=1,pady=2)
+
+#Text from the left Text input
+lab=Label(root, text='Text input\nВвод текста', font='Arial 10 bold',bg='#783')
+lab.place(x=0,y=50)
+
+#Text from the left Output text
+lab1=Label(root, text='Text Output\nВывод текста', font='Arial 9 bold',bg='#783')
+lab1.place(x=0,y=160)
+
+#second right Combobox
+comboTwo = ttk.Combobox(header_frame, values=[lang for lang in languages], state='raedonly')
+#Текущий/current/the language is automatically set to combo box
+comboTwo.current(1)
+comboTwo.grid(row=0,column=2)
+
+#first text entry window
+t_input = Text(root, width=40, height=5, font='Arial 12 bold',bg='#999')
+t_input.place(x=90, y=50)
+
+#text translation button
+btn = Button(root, width=40, height=2, text='__________Перевести => Translate__________', font='Arial 15 bold',bg='#783', command=translate)
+btn.place(x=5,y=270)
+
+#second window for displaying the translated text
+t_output = Text(root, width=40, height=5, font='Arial 12 bold',bg='#999')
+t_output.place(x=90, y=160)
+
+#program cycle
+root.mainloop()
+
+
+
+
+
+
+pip install pygame
+pip install googletrans==3.1.0a0
+pip install installer 
+installer -F
+
+#program for translating from Russian into English
+
+from cgitb import text
+from email import header
+from fnmatch import translate
+from gettext import translation
+from tkinter import *
+from tkinter import ttk
+from googletrans import Translator
+
+
+#text translation function
+def translate():
+    for language, suffix in languages.items():
+        if comboTwo.get() == language:
+            text = t_input.get('1.0', END)
+            translation = translator.translate(text, dest=suffix)
+            t_output.delete('1.0', END)
+            t_output.insert('1.0',translation.text)
+
+
+#creating the main window
+root = Tk()
+root.geometry('500x340')
+root.title('Переводчик')
+root.resizable(0,0)
+root['bg'] = '#555'
+
+#class
+translator = Translator()
+
+#dictionary with languages
+languages = {'Русский': 'ru', 'Английский': 'en', 'Французский': 'fr'}
+
+#top Frame
+header_frame = Frame(root, bg='#783')
+
+#stretch in length
+header_frame.pack(fill=X)
+
+#central arrow Frame
+header_frame.grid_columnconfigure(0, weight=1)
+header_frame.grid_columnconfigure(1, weight=1)
+header_frame.grid_columnconfigure(2, weight=1)
+
+#first left Combobox
+comboOne = ttk.Combobox(header_frame,values=[lang for lang in languages], state='readonly')
+comboOne.current(0)
+comboOne.grid(row=0, column=0, pady=0, padx=0)
+
+#Label with an arrow at the top
+label = Label(header_frame, fg='black', bg='#783', font='Arial 20 bold',text='=>')
+label.grid(row=0, column=1,pady=2)
+
+#Text from the left Text input
+lab=Label(root, text='Text input\nВвод текста', font='Arial 10 bold',bg='#783')
+lab.place(x=0,y=50)
+
+#Text from the left Output text
+lab1=Label(root, text='Output text\nВывод текста', font='Arial 9 bold',bg='#783')
+lab1.place(x=0,y=160)
+
+#second right Combobox
+comboTwo = ttk.Combobox(header_frame, values=[lang for lang in languages], state='raedonly')
+#Текущий/current/the language is automatically set to combo box
+comboTwo.current(1)
+comboTwo.grid(row=0,column=2)
+
+#first text entry window
+t_input = Text(root, width=40, height=5, font='Arial 12 bold',bg='#999')
+t_input.place(x=90, y=50)
+
+#text translation button
+btn = Button(root, width=40, height=2, text='__________Перевести => Translate__________', font='Arial 15 bold',bg='#783', command=translate)
+btn.place(x=5,y=270)
+
+#second window for displaying the translated text
+t_output = Text(root, width=40, height=5, font='Arial 12 bold',bg='#999')
+t_output.place(x=90, y=160)
+
+#program cycle
+root.mainloop()
+
+from email import header
+from fnmatch import translate
+from gettext import translation
+from tkinter import *
+from tkinter import ttk
+from googletrans import Translator
+
+
+def translate():
+    for language, suffix in languages.items():
+        if comboTwo.get() == language:
+            text = t_input.get('1.0', END)
+            translation = translator.translate(text, dest=suffix)
+            t_output.delete('1.0', END)
+            t_output.insert('1.0',translation.text)
+
+
+
+root = Tk()
+root.geometry('500x350')
+root.title('Переводчик')
+root.resizable(0,0)
+root['bg'] = 'black'
+translator = Translator()
+
+languages = {'Русский': 'ru', 'Английский': 'en', 'Французский': 'fr'}
+
+header_frame = Frame(root, bg='black')
+header_frame.pack(fill=X)
+
+header_frame.grid_columnconfigure(0, weight=1)
+header_frame.grid_columnconfigure(1, weight=1)
+header_frame.grid_columnconfigure(2, weight=1)
+
+comboOne = ttk.Combobox(header_frame,
+                        values=[lang for lang in languages], state='readonly')
+comboOne.current(0)
+comboOne.grid(row=0, column=0)
+
+
+
+label = Label(header_frame, fg='white', bg='black', font='Arial 20 bold',text='->')
+label.grid(row=0, column=1)
+
+comboTwo = ttk.Combobox(header_frame,
+                        values=[lang for lang in languages], state='raedonly')
+comboTwo.current(1)
+comboTwo.grid(row=0,column=2)
+
+t_input = Text(root, width=35, height=5, font='Arial 12 bold')
+t_input.pack(padx=20)
+
+btn = Button(root, width=45, text='Перевести', command=translate)
+btn.pack()
+
+t_output = Text(root, width=45, height=5, font='Arial 20 bold')
+t_output.pack(pady=20)
+
+root.mainloop()
+
+
+from ast import Delete
+from cgitb import text
+from faulthandler import disable
+from pickle import GLOBAL
+import time
+from tkinter import *
+a = 0
+f = 300
+
+root = Tk()
+root.title('Прога')
+root.geometry('200x200+10+10')
+root.resizable(0,0)
+
+def bot():
+
+    global f , a
+
+    f = f+1
+
+    btn.config(text=f, bg='#'+str(f+0))
+    
+    #entry.delete('0', END)
+    entry.insert(END, '')
+    #backgroundcolor = ' Black'
+       #btn.config(text=f, bg='#'+str(f+0),background='yellow') 
+    #time.sleep(0.2)
+    while True:
+        a = a + 1
+        #time.sleep(1)
+        entry.insert(END, a)
+        
+        if a >= 10:
+            break
+#time.sleep(10)
+
+def gh():
+    btn.config(state=['active'],fg='green',bd='10')
+
+def dis():
+    btn.config(state=['disabled'],fg='red',bg='gray',bd='0')
+    
+
+    
+btn1 = Button(root, text='  Active  ',command=gh)
+btn1.pack()
+
+btn2 = Button(root, text='Disabled',command=dis)
+btn2.pack()
+
+btn = Button(root, text='Button', font='Arial 10 bold', padx=10, pady=10, bg='#562',
+                                    bd='10',state=['disabled'],  fg='black',  command=bot)
+btn.pack()
+
+entry = Entry(root,width=30)
+entry.pack()
+
+root.mainloop()
+
+
+from tkinter import *
+import pyautogui
+
+def b1(event):
+    root.title('Левая кнопка мыши')
+
+
+def b3(event):
+    root.title('Right кнопка мыши')
+
+def movemouse(event):
+    #pyautogui.size()
+    pyautogui.position()
+    x = event.x
+    y = event.y
+    s = "движение мышью {} x {}" .format(x,y)
+    root.title(s) 
+
+   
+
+root = Tk()
+
+root.configure(bg='black')
+
+btn = Button(text='Mause',command=movemouse)
+btn.pack()
+
+root.bind('<Button-1>', b1)
+root.bind('<Button-3>', b3)
+root.bind('<Motion>', movemouse)
+
+root.mainloop()
+
+
+from tkinter import * 
+
+
+def event_info(event):
+    print(type(event))
+    print(event)
+    print(event.time)
+    print(event.x_root)
+    print(event.y_root)
+
+
+root = Tk()
+root.bind('a', event_info)
+
+
+root.mainloop()
+
+
+
+from cgitb import text
+from tkinter import *
+from turtle import right
+
+
+def left_click(event):
+    frame1.config(bg='red')
+    frame2.config(bg='white')
+    frame3.config(bg='white')
+
+    root.config(bg='white')
+    root.title('Left_click')
+
+def mid_click(event):
+    frame1.config(bg='white')
+    frame2.config(bg='red')
+    frame3.config(bg='white')
+
+    root.title('Middle_click')
+
+def right_click(event):
+    frame1.config(bg='white')
+    frame2.config(bg='white')
+    frame3.config(bg='red')
+
+    root.title('Right_click')
+
+
+root = Tk()
+root.config(bg='#459')
+root.title('Click')
+
+frame1 = Frame(root, width=500, height=500, bg='white')
+frame2 = Frame(root, width=500, height=500, bg='white')
+frame3 = Frame(root, width=500, height=500, bg='white') 
+
+frame1.grid(row=0, column=0, padx = 1, pady = 1)
+frame2.grid(row=0, column=1, padx = 1, pady = 1)
+frame3.grid(row=0, column=2, padx = 1, pady = 1)
+
+root.bind('<Button-1>', left_click)
+root.bind('<Button-2>', mid_click)
+root.bind('<Button-3>', right_click)
+
+root.mainloop()
+
+
+from cgitb import text
+from tkinter import *
+from turtle import right
+
+
+def left_click(event):
+    frame1.config(bg='red')
+    frame2.config(bg='white')
+    frame3.config(bg='white')
+
+    root.title('Left_click')
+
+  
+
+def mid_click(event):
+    frame1.config(bg='white')
+    frame2.config(bg='red')
+    frame3.config(bg='white')
+    root.title('Middle_click')
+
+    
+
+def right_click(event):
+    frame1.config(bg='white')
+    frame2.config(bg='white')
+    frame3.config(bg='red')
+    root.title('Right_click')
+
+    
+
+
+root = Tk()
+root.config(bg='#459')
+root.title('Click')
+
+frame1 = Frame(root, width=500, height=500, bg='white')
+frame2 = Frame(root, width=500, height=500, bg='white')
+frame3 = Frame(root, width=500, height=500, bg='white') 
+
+frame1.grid(row=0, column=0, padx = 1, pady = 1)
+frame2.grid(row=0, column=1, padx = 1, pady = 1)
+frame3.grid(row=0, column=2, padx = 1, pady = 1)
+
+root.bind('<Button-1>', left_click)
+root.bind('<Button-2>', mid_click)
+root.bind('<Button-3>', right_click)
+
+root.mainloop()
+
+
+
+
+
+
+pip install python-tk
+>>> import tkinter
+>>> tkinter._test()
+import Tkinter as tk
+
+from tkinter import *
+root = Tk()
+root.title('Прога')
+root.geometry('200x200')
+root.resizable(0,0)
+bnt = Button(root, text='Button').pack()
+root.mainloop()
+
+
+
+
+1
+"topmost": must be -alpha, -transparentcolor, -disabled, -fullscreen, 
+-toolwindow, or -topmost
+
+from tkinter import *
+root = Tk()
+root['bg'] = '#fafafa'
+root.title('name')
+
+root.wm_attributes('-alpha',0.7) прозрачность
+root.geometry('300x250')
+root.resizable(width=False, height=False)
+canvas = Canvas(root,height=300, width=250)
+canvas.pack()
+frame = Frame(root, bg='red')
+frame.place(relx=0.15,rely=0.15,relwidth=0.7, relheigh=0.7)
+title = Label(frame,text='text',bg='gray',font = 40)
+title.pack()
+btn = Button(frame, text='Button', bg='yellow')
+btn.pack()
+
+root.mainloop()
+Russian Language Pack for Visual Studio Code  v1.71.9140935
+MS-CEINTL.vscode-language-pack-ru
+2
+
+
+from tkinter  import *
+root = Tk()
+
+root.mainloop()
+
+3
+
+
+from tkinter import *
+root = Tk()
+root['bg']='#fafafa'
+root.title('name')
+root.wm_attributes('-alpha', 0.1)
+root.wm_attributes('-fullscreen', True)
+root.wm_attributes('-topmost', True)
+root.mainloop()
+
+
+from cgitb import text
+from tkinter import *
+from tkinter.tix import ButtonBox
+root = Tk()
+root['bg']='green'
+root.title('name')
+root.wm_attributes('-alpha', 0.9)
+#root.wm_attributes('-fullscreen', True)
+root.wm_attributes('-topmost', True)
+root.geometry('300x300')
+root.resizable(0,0)
+a=10
+d=10
+c=a+d
+root.title(c)
+btv=Button(root,text="Serega "+  str(c))
+btv.pack()
+root.mainloop()
+
+608b8b82342688f8ebfed1c85c76515a weather kye
+
+
+
+import logging
+from tkinter import *
+from tkinter import font
+from tkinter import messagebox
+root = Tk()
+
+def btn_click():
+   # messagebox.showinfo('проверка',' сообщение')
+    login = loginInput.get()
+    password = passField.get()
+
+    info_str = f'Логин: {str(login)}, Пароль: {str(password)}'
+    messagebox.showinfo('Название',info_str)
+
+    print('Some text')
+
+root.title('name')
+root['bg']='#fafafa'
+root.geometry('310x305+10+100')
+root.resizable(0,0)
+root.wm_attributes('-alpha', 0.9)
+
+canvas = Canvas(root,height=295,width=290,bg='gold')
+canvas.pack()
+
+frame = Frame(root, bg='red')
+frame.place(relx=0.15,rely=0.15,relheight=0.7,relwidth=0.7)
+
+title = Label(frame, text='text',bg='gray',font='Arial,40').pack()
+#title.pack()
+btn = Button(frame, text='Button', bg='yellow',font='Arial,20', command=btn_click)
+btn.pack()
+loginInput = Entry(frame,bg='white')
+loginInput.pack()
+passField = Entry(frame,bg='white',show='*')
+passField.pack()
+
+root.mainloop()
+
+from logging import root
+from tkinter import *
+from unittest import result
+from tkinter.font import Font
+from urllib import request
+root = Tk()
+
+def get_weather():
+    city = cityField.get()
+    key ='608b8b82342688f8ebfed1c85c76515a'
+    url = 'https://home.openweathermap.org/'
+    params = {'APPID': key, 'q': city, 'units': 'imperial'}
+    result = request.get(url,params=params) 
+    weather = result.json()
+
+    print(weather)
+
+
+
+
+root['bg'] = '#fafafa'
+root.title('Погода')
+root.geometry('300x300+10+10')
+root.resizable(0,0)
+
+frame_top = Frame(root, bg='red',bd=5)
+frame_top.place(rely=0.15,relx=0.15,relheight=0.25,relwidth=0.7)
+
+frame_button = Frame(root,bg='green',bd=10)
+frame_button.place(relx=0.15,rely=0.55,relwidth=0.7,relheight=0.25)
+
+cityField = Entry(frame_top,bg='white')
+cityField.pack()
+
+btn = Button(frame_top, text='Просмотреть погоду', command=get_weather)
+btn.pack()
+
+info = Label(frame_button, text='Информация о погоде', bg='#ffb700')
+info.pack()
+root.mainloop()
+
+
+from logging import root
+from tkinter import *
+from unittest import result
+from tkinter.font import Font
+from urllib import request
+root = Tk()
+
+def get_weather():
+    city = cityField.get()
+    key ='608b8b82342688f8ebfed1c85c76515a'
+    url = 'https://home.openweathermap.org/'
+    params = {'APPID': key, 'q': city, 'units': 'imperial'}
+    result = request.get(url,params=params) 
+    weather = result.json()
+
+    print(weather)
+
+
+
+
+root['bg'] = '#fafafa'
+root.title('Погода')
+root.geometry('300x300+10+10')
+root.resizable(0,0)
+
+frame_top = Frame(root, bg='red',bd=5)
+frame_top.place(rely=0.15,relx=0.15,relheight=0.25,relwidth=0.7)
+
+frame_button = Frame(root,bg='green',bd=10)
+frame_button.place(relx=0.15,rely=0.55,relwidth=0.7,relheight=0.25)
+
+cityField = Entry(frame_top,bg='white')
+cityField.pack()
+
+btn = Button(frame_top, text='Просмотреть погоду', command=get_weather)
+btn.pack()
+
+info = Label(frame_button, text='Информация о погоде', bg='#ffb700')
+info.pack()
+root.mainloop()
+
+
+from tkinter import *
+from tkinter import messagebox
+import random
+
+
+def no():
+    messagebox.showinfo('','Спасибо за ваш выбор')
+    quit()
+
+def motionMouse(event):
+    btnYes.place(x=random.randint(0,500),y=random.randint(0,500))
+
+
+root = Tk()
+root.geometry('600x600')
+root.resizable(0,0)
+root['bg'] = '#ffb700'
+root.title('прог')
+
+lab = Label(root, text='Лови кнопку',font="Arial 20 bold",bg='#555').pack()
+btnYes = Button(root, text='Yes', font='Arial 20 bold',bg='red')
+btnYes.place(x=170,y=100)
+btnYes.bind('<Enter>',motionMouse)
+btnNo = Button(root,text='No', font='Arial 20 bold', command=no).place(x=350, y=100)
+
+root.mainloop()
+
+
+
+
+from tkinter import *
+from tkinter import messagebox
+import random
+
+def vihod():
+    messagebox.showinfo('Quit','Quit')
+    quit()
+
+def motionMouse(event):
+    btn1.place(x=random.randint(10,500), y=random.randint(150,500))
+
+root = Tk()
+root.title('Test')
+root['bg'] = '#ffb700'
+root.geometry('600x600')
+root.resizable(0,0)
+ 
+btn1 = Button(root, text='Button1', font='Arial 20 bold',bg='gold')
+btn1.place(x=150,y=100)
+btn1.bind('<Enter>', motionMouse )
+btn2 = Button(root, text='Button2', font='Arial 20 bold',bg='#555', command=vihod).place(x=300,y=100)
+
+
+
+lab1 = Label(root, text='Label1', font='Arial 10 bold', bg='yellow').place(x=150,y=75)
+lab2 = Label(root, text='Label2', font='Arial 10 bold', bg='red').place(x=300,y=75)
+lab3 = Label(root, text='Label3', font='Arial 20 bold', bg='green').place(x=250 , y=5)
+root.mainloop()
+
+padx=10, pady=10 размер кнопки
+
+
+
+from cgitb import text
+from tkinter import *
+from tkinter import messagebox
+import random
+
+global count
+count = 100
+count1 = 0
+
+def vihod():
+    #messagebox.showinfo('Quit','Quit')
+    #quit()
+    global count
+    count += 1
+    btn2.config(text='Button '+str(count+300),bg='#'+str(count+300))
+    Frame1.config(bg='#'+str(count))
+    root.config(bg='#'+str(count+100))
+    btn1.config(text=count, bg='#'+str(count+200))
+    lab1 = Label(root, text= count+400  , font='Arial 10 bold', bg='#'+str(count+400
+                                                                )).place(x=150,y=75)
+    if count>=110:
+        lab2 = Label(root, text=count, font='Arial 20 bold', bg='red').place(x=count,y=count+50)
+
+def motionMouse(event):
+    btn1.place(x=random.randint(60,410), y=random.randint(156,530))
+    global count1
+    count1 += 1
+    btn1.configure(text=count1)
+
+
+ 
+
+
+root = Tk()
+root.title('Test')
+root['bg'] = '#ffb700'
+root.geometry('600x600')
+root.resizable(0,0)
+
+Frame1 = Frame(root, bg='gold')
+Frame1.place(relx=0.10,rely=0.26,relheight=0.7,relwidth=0.8)
+ 
+btn1 = Button(root, text='Button1', font='Arial 10 bold',bg='gold', padx=30, pady=10)
+btn1.place(x=150,y=100)
+
+btn1.bind('<Enter>', motionMouse )
+
+btn2 = Button(root, text='Button2', font='Arial 10 bold',bg='#510', command=vihod)
+btn2.place(x=300,y=100)
+
+
+
+lab1 = Label(root, text= count  , font='Arial 10 bold', bg='yellow').place(x=150,y=75)
+lab2 = Label(root, text='Label2', font='Arial 10 bold', bg='red').place(x=300,y=75)
+lab3 = Label(root, text='Label3', font='Arial 10 bold', bg='green').place(x=250 , y=5)
+
+
+
+root.mainloop()
+
+from cgitb import text
+from tkinter import *
+from tkinter import messagebox
+import random
+
+global count
+count = 100
+count1 = 0
+
+def vihod():
+    #messagebox.showinfo('Quit','Quit')
+    #quit()
+    global count
+    count += 1
+    btn2.config(text='Button '+str(count+300),bg='#'+str(count+300))
+    Frame1.config(bg='#'+str(count))
+    root.config(bg='#'+str(count+100))
+    btn1.config(text=count, bg='#'+str(count+200))
+    lab1 = Label(root, text= count+400  , font='Arial 10 bold', bg='#'+str(count+400
+                                                                )).place(x=150,y=75)
+    if count>=110:
+        lab2 = Label(root, text=count, font='Arial 20 bold', bg='red').place(x=count,y=count+50)
+
+def motionMouse(event):
+    btn1.place(x=random.randint(60,410), y=random.randint(156,530))
+    global count1
+    count1 += 1
+    btn1.configure(text=count1)
+
+
+ 
+
+
+root = Tk()
+root.title('Test')
+root['bg'] = '#ffb700'
+root.geometry('600x600')
+root.resizable(0,0)
+
+Frame1 = Frame(root, bg='gold')
+Frame1.place(relx=0.10,rely=0.26,relheight=0.7,relwidth=0.8)
+ 
+btn1 = Button(root, text='Button1', font='Arial 10 bold',bg='gold', padx=30, pady=10)
+btn1.place(x=150,y=100)
+
+btn1.bind('<Enter>', motionMouse )
+
+btn2 = Button(root, text='Button2', font='Arial 10 bold',bg='#510', command=vihod)
+btn2.place(x=300,y=100)
+
+
+
+lab1 = Label(root, text= count  , font='Arial 10 bold', bg='yellow').place(x=150,y=75)
+lab2 = Label(root, text='Label2', font='Arial 10 bold', bg='red').place(x=300,y=75)
+lab3 = Label(root, text='Label3', font='Arial 10 bold', bg='green').place(x=250 , y=5)
+
+
+
+root.mainloop()
+
+
+import time
+from tkinter import *
+
+
+time.sleep(5)
+
+
+
+https://mail.google.com/mail/u/0/#inbox
+
+
+
+
+from math import *
+
+pi = float(3.14) #постоянная величина
+W = float(3.40) #высота
+#D_in = float(32.92) #внутренний диаметр
+D_out =float(39.72) #внешний диаметр
+T = float(3.40) #толщина
+p = float(0.04) #плотность
+
+S = 387.75232
+
+#m = float(pi * W * T * (D_in + T) / 1000 * p) #масса
+#V = W * T * pi * (D_in + T) #объем
+#S = pi / 4 * ((D_in + 2 * T)**2 - D_in**2) #площадь
+#S1 = pi / 4 * (D_out**2 - (D_out - 2 * T)**2) #площадь
+#S2 = pi / 4 * (D_out**2 - D_in**2) #площадь
+
+#D_out  = sqrt(S / (pi/4) + (D_in**2))
+#D_in = sqrt(S / pi/4 + (D_out**2))-T*2
+
+
+
+#print('Масса кольца: ',m,'g/cm3')
+print('Объём кольца: ',V,'cm3')
+#print('Площадь кольца D_in: ',S,'mm2')
+#print('Площадь кольца D_out: ',S1,'mm2')
+#print('Площадь кольца D_out D_in: ',S2,'mm2')
+#print('Внешний диаметр кольца: ',D_out,'mm')
+#print('Внутренний диаметр кольца: ',D_in,'mm')
+#print('Толщина кольца: ',(D_out - D_in)/2,'mm')
+
+
+
+'''
+
+from math import *
+import math
+
+T = 10 #толщина
+S = 1256.6370614359173 #mm2
+
+math.pi = pi
+
+
+D = 50 #mm
+d = 30 #mm
+
+D = sqrt(S / (pi/4) + (d**2))
+d = sqrt(S / pi/4 + (D**2))-T*2
+
+S = pi / 4 * (D**2 - d**2)
+
+print('    ')
+print('Площадь S 401.33846149609604: ',S)
+print('Диаметр внешний D 40:         ',D)
+print('Диаметр внутренний d 33:      ',d)
+print('    ')
+'''
+
+
+
+
+//////////////////////////////////////////////////////
+
+from math import *
+
+
+m = float(0.06260748031999999) #масса
+W = float(3.40) #высота
+p = float(0.04) #плотность
+D_out =float(39.72) #внешний диаметр
+
+pi = float(3.14) #постоянная величина
+
+V = m/p #объем
+C = pi * D_out #L
+
+D_in = float(32.92) #внутренний диаметр
+T = float(3.40) #толщина
+
+m1 = float(pi * W * T * (D_in + T) / 1000 * p) #масса
+
+V1 = W * T * pi * (D_in + T)/1000 #объем
+
+S = pi / 4 * ((D_in + 2 * T)**2 - D_in**2) #площадь
+S1 = pi / 4 * (D_out**2 - (D_out - 2 * T)**2) #площадь
+S2 = pi / 4 * (D_out**2 - D_in**2) #площадь
+
+#D_out  = sqrt(S / (pi/4) + (D_in**2))
+#D_in = sqrt(S / pi/4 + (D_out**2))-T*2
+
+print('Масса кольца: ',m,'g/cm3')
+print('Масса кольца m1: ',m1,'g/cm3')
+print('Объём кольца V2: ',V,'cm3')
+print('Объём кольца V1: ',V1,'cm3')
+print('Площадь кольца0: ',S,'mm2')
+print('Плотность кольца p: ',p,' ')
+print('Высота кольца W: ',W,'mm')
+print('Площадь кольца D_out: ',S1,'mm2')
+print('длина кольца D_out: ',C,'mm')
+print('Площадь кольца D_out D_in: ',S2,'mm2')
+print('Внешний диаметр кольца: ',D_out,'mm')
+print('Внутренний диаметр кольца: ',D_in,'mm')
+print('Толщина кольца: ',(D_out - D_in)/2,'mm')
+
+
+
+'''
+
+from math import *
+import math
+
+T = 10 #толщина
+S = 1256.6370614359173 #mm2
+
+math.pi = pi
+
+
+D = 50 #mm
+d = 30 #mm
+
+D = sqrt(S / (pi/4) + (d**2))
+d = sqrt(S / pi/4 + (D**2))-T*2
+
+S = pi / 4 * (D**2 - d**2)
+
+print('    ')
+print('Площадь S 401.33846149609604: ',S)
+print('Диаметр внешний D 40:         ',D)
+print('Диаметр внутренний d 33:      ',d)
+print('    ')
+'''
+
+
+/////////////////////////////////////////////////////
+
+#формула m = p*v p плотность v обьем
+#формула ml = ABLp
+#формула mkp = b2(A+B)Lp
+# A,B ширина сторон профиля. b толщина стенки изделия, L длина , p плотность металла
+#площадь сечения 
+#для листа умножаем толщину и ширину
+#для трубы квадратной складываем величину сторон и умножаем на толщину стенки и умножаем на длину изделия 
+# плотность = масса / обьем p=m/v
+# g/cm3
+# # плотность железа p=7900кг/м3 
+
+
+#V = 10 #    литр = 0,01m3 
+
+#m = 14 # кг
+
+#p = m/V
+#p = m / 0.01 #m3
+
+#print(' плотность = ',p,' кг/м3')
+
+#7800 m3 / 7.8 cm3 плотность железа 
+
+
+#D1 внутренний диаметр кольца
+#D2 внешний диаметр кольца
+#T  толщина проката или проволки
+#C  длина окружности
+#C = pi * (D1 + T) or C = pi * (D2 - T)
+#масса кольца прямоугольного сечения
+# V = W * T * pi *(D + T)
+# T толщина 
+# W ширина h высота
+# D внутренний диаметр
+# масса такого кольца
+# m = pi * W * T *(D + t) / 1000 * p
+'''
+
+#m масса
+m1 = m2 = m3 = m4 = 100
+#p плотность
+p1 = 1
+p2 = 1.1
+p3 = 1.2
+p4 = 1.3
+#W высота
+W1 = W2 = W3 = W4 = 10
+#D диаметр
+D1 = d1
+D2 = d2
+D3 = d3
+D4 = 10
+#T толщина 
+T1 = t1 
+T2 = t2
+T3 = t3
+T4 = t4
+
+
+D1,D2,D3 = C / pi
+
+#D1 = (pi * (D11 + T1)) / pi
+
+#C1 = pi * (D11 + T1)      or      C1 = pi * (D21 - T1)
+#C2 = pi * (D12 + T2)      or      C2 = pi * (D22 - T2)
+#C3 = pi * (D13 + T3)      or      C3 = pi * (D23 - T3)
+
+'''
+x = 3
+hh = 1*2*x*(4+5)/1000*6 #0.324
+print(hh)
+
+
+
+
+from math import *
+import math
+
+T = 10 #толщина
+S = 1256.6370614359173 #mm2
+
+math.pi = pi
+
+
+D = 50 #mm
+d = 30 #mm
+
+D = sqrt(S / (pi/4) + (d**2))
+d = sqrt(S / pi/4 + (D**2))-T*2
+
+S = pi / 4 * (D**2 - d**2)
+
+print('    ')
+print('Площадь S 401.33846149609604: ',S)
+print('Диаметр внешний D 40:         ',D)
+print('Диаметр внутренний d 33:      ',d)
+print('    ')
+
+
+from math import *
+
+
+m = float(0.06260748031999999) #масса
+W = float(3.40) #высота
+p = float(0.04) #плотность
+D_out =float(39.72) #внешний диаметр
+
+pi = float(3.14) #постоянная величина
+
+V = m/p #объем
+C = pi * D_out #L
+
+D_in = float(32.92) #внутренний диаметр
+T = float(3.40) #толщина
+
+m1 = float(pi * W * T * (D_in + T) / 1000 * p) #масса
+
+V1 = W * T * pi * (D_in + T)/1000 #объем
+
+S = pi / 4 * ((D_in + 2 * T)**2 - D_in**2) #площадь
+S1 = pi / 4 * (D_out**2 - (D_out - 2 * T)**2) #площадь
+S2 = pi / 4 * (D_out**2 - D_in**2) #площадь
+
+#D_out  = sqrt(S / (pi/4) + (D_in**2))
+#D_in = sqrt(S / pi/4 + (D_out**2))-T*2
+
+print('Масса кольца: ',m,'g/cm3')
+print('Масса кольца m1: ',m1,'g/cm3')
+print('Объём кольца V2: ',V,'cm3')
+print('Объём кольца V1: ',V1,'cm3')
+print('Площадь кольца0: ',S,'mm2')
+print('Плотность кольца p: ',p,' ')
+print('Высота кольца W: ',W,'mm')
+print('Площадь кольца D_out: ',S1,'mm2')
+print('длина кольца D_out: ',C,'mm')
+print('Площадь кольца D_out D_in: ',S2,'mm2')
+print('Внешний диаметр кольца: ',D_out,'mm')
+print('Внутренний диаметр кольца: ',D_in,'mm')
+print('Толщина кольца: ',(D_out - D_in)/2,'mm')
+
+
+
+'''
+
+from math import *
+import math
+
+T = 10 #толщина
+S = 1256.6370614359173 #mm2
+
+math.pi = pi
+
+
+D = 50 #mm
+d = 30 #mm
+
+D = sqrt(S / (pi/4) + (d**2))
+d = sqrt(S / pi/4 + (D**2))-T*2
+
+S = pi / 4 * (D**2 - d**2)
+
+print('    ')
+print('Площадь S 401.33846149609604: ',S)
+print('Диаметр внешний D 40:         ',D)
+print('Диаметр внутренний d 33:      ',d)
+print('    ')
+'''
+
+
+
+
+
+
+
+
+
+from turtle import Turtle
+import turtle
+
+t = turtle
+
+t.speed(11)
+
+t.up()
+t.goto(0,0)
+t.down() 
+
+for i in range(45):     #1
+    t.forward(100)
+    t.left(184)
+    t.forward(100)
+
+
+t.up()
+t.goto(0,200)
+t.down()    
+
+for i in range(180):    #2
+    t.forward(100)
+    t.left(182)
+    t.forward(100)
+
+
+t.up()
+t.goto(0,-200)
+t.down()    
+
+for i in range(182):     #3
+    t.forward(100)
+    t.left(182)
+    t.forward(100)
+
+
+t.up()
+t.goto(250,0)
+t.down()    
+
+for i in range(91):     #4
+    t.forward(100)
+    t.left(183)
+    t.forward(100)
+
+t.up()
+t.goto(500,0)
+t.down()    
+
+for i in range(15):     #5
+    t.forward(100)
+    t.left(200)
+    t.forward(100)
+
+t.up()
+t.goto(-250,0)
+t.down()    
+
+for i in range(30):     #6
+    t.speed(4)
+    t.forward(100)
+    t.left(189)
+    t.forward(100)
+
+t.up()
+t.goto(-500,0)
+t.down()    
+
+for i in range(25):     #7
+    
+    t.forward(100)
+    t.left(195)
+    t.forward(100)
+
+
+t.up()
+t.goto(0,-200)
+t.down()  
+
+t.circle(200)
+
+input()
+
+from turtle import *
+
+t = Turtle()
+
+x1widght = -5
+y1height = 5
+x2widght = 0
+y2height = 0
+k = 0
+
+t.speed(1)
+t.up()
+t.goto(-800,0)
+t.pensize(5)
+t.down()
+t.goto(800,-0)
+t.up()
+t.goto(0,400)
+t.down()
+t.goto(0,-400)
+
+for i in range(50):
+    k = k + 1
+    t.speed(5) #скорость
+    t.up()
+    t.goto(0,x1widght)
+    t.pensize(1)
+    t.down()
+    #t.color("green", "red")
+    t.color("#285078", "#a0c8f0")
+    t.begin_fill()
+    #t.heading() #????????
+    t.circle(y1height)
+    t.end_fill() #??????
+    t.degrees(400.0)
+    #t.distance(90,100) #дистанция, ????????????
+    t.end_fill()
+    
+    t.forward(200) #вперед
+    t.dot(60, "blue"); #рисует круг
+    print(round(t.xcor(), 5)) #выводит кординаты на экран
+    print(round(t.ycor(), 5)) #выводит кординаты на экран
+    t.backward(600) #назад
+    t.fillcolor('white') #цвет курсора
+    t.right(45) #поворот на 45 градусов в право
+    t.left(20) #поворот на 20 градусов в лево
+    t.setpos(60,30) #устанавливает позицию
+    t.setx(10) #устанавливает позицию
+    t.sety(-10) #устанавливает позицию
+    #t.setheading(270) #Set the orientation 
+    #home() #???
+    t.circle(50) #рисует круг
+    #t.degrees(400.0) #????????????
+    #t.radians() #????????????
+    
+    t.undo() #отменяет предыдущее действие Undo (repeatedly) the last turtle action(s). 
+    t.color("#555")
+    t.stamp() #рисует стрелку
+    t.fd(100) #рисует линию
+    t.clearstamps() #удаляет все штампы
+    print(k)
+    t.write('hello', move=False, align='left', font=('Arial', 20, 'normal'))
+    #t.write((0.0), True)
+    if k>2:
+       #reset() #?????????
+       #clear() #??????
+       print('k > 2')
+
+    x1widght = x1widght - 5
+    y1height = y1height + 5
+    x2widght = x2widght + 5
+
+input()
+
+
+
+from turtle import *
+
+t = Turtle()
+
+x1widght = -5
+y1height = 5
+x2widght = 0
+y2height = 0
+k = 0
+
+t.speed(20)
+t.up()
+t.goto(-800,0)
+t.pensize(5)
+t.down()
+t.goto(800,-0)
+t.up()
+t.goto(0,400)
+t.down()
+t.goto(0,-400)
+
+for i in range(50):
+    k = k + 1
+    t.speed(5) #скорость
+    t.up()
+    t.goto(0,x1widght)
+    t.pensize(1)
+    t.down()
+    #t.color("green", "red")
+    t.color("#285078", "#a0c8f0")
+    t.begin_fill()
+    #t.heading() #????????
+    t.circle(y1height)
+    t.end_fill() #??????
+    t.degrees(400.0)
+    #t.distance(90,100) #дистанция, ????????????
+    t.end_fill()
+    
+    t.forward(200) #вперед
+    t.dot(60, "blue"); #рисует круг
+    print(round(t.xcor(), 5)) #выводит кординаты на экран
+    print(round(t.ycor(), 5)) #выводит кординаты на экран
+    t.backward(600) #назад
+    t.fillcolor('white') #цвет курсора
+    t.right(45) #поворот на 45 градусов в право
+    t.left(20) #поворот на 20 градусов в лево
+    t.setpos(60,30) #устанавливает позицию
+    t.setx(10) #устанавливает позицию
+    t.sety(-10) #устанавливает позицию
+    #t.setheading(270) #Set the orientation 
+    #home() #???
+    t.circle(50) #рисует круг
+    #t.degrees(400.0) #????????????
+    #t.radians() #????????????
+    
+    t.undo() #отменяет предыдущее действие Undo (repeatedly) the last turtle action(s). 
+    t.color("#555")
+    t.stamp() #рисует стрелку
+    t.fd(100) #рисует линию
+    t.clearstamps() #удаляет все штампы
+    print(k)
+    t.write('hello', move=False, align='left', font=('Arial', 20, 'normal'))
+   # t.write((0,0), True)
+    if k>2:
+       #reset() #?????????
+       #clear() #??????
+       print('k > 2')
+
+
+    x1widght = x1widght - 5
+    y1height = y1height + 5
+    x2widght = x2widght + 5
+
+input()
+
+
+
+
+
+
+width=500, height=500, bg='white
+writer = Turtle() с большой буквы
+
+
+#!/usr/bin/env python3
+"""      turtle-example-suite:
+
+        tdemo_bytedesign.py
+
+An example adapted from the example-suite
+of PythonCard's turtle graphics.
+
+It's based on an article in BYTE magazine
+Problem Solving with Logo: Using Turtle
+Graphics to Redraw a Design
+November 1982, p. 118 - 134
+
+-------------------------------------------
+
+Due to the statement
+
+t.delay(0)
+
+in line 152, which sets the animation delay
+to 0, this animation runs in "line per line"
+mode as fast as possible.
+"""
+
+from turtle import Turtle, mainloop
+from time import perf_counter as clock
+
+# wrapper for any additional drawing routines
+# that need to know about each other
+class Designer(Turtle):
+
+    def design(self, homePos, scale):
+        self.up()
+        for i in range(5):
+            self.forward(64.65 * scale)
+            self.down()
+            self.wheel(self.position(), scale)
+            self.up()
+            self.backward(64.65 * scale)
+            self.right(72)
+        self.up()
+        self.goto(homePos)
+        self.right(36)
+        self.forward(24.5 * scale)
+        self.right(198)
+        self.down()
+        self.centerpiece(46 * scale, 143.4, scale)
+        self.getscreen().tracer(True)
+
+    def wheel(self, initpos, scale):
+        self.right(54)
+        for i in range(4):
+            self.pentpiece(initpos, scale)
+        self.down()
+        self.left(36)
+        for i in range(5):
+            self.tripiece(initpos, scale)
+        self.left(36)
+        for i in range(5):
+            self.down()
+            self.right(72)
+            self.forward(28 * scale)
+            self.up()
+            self.backward(28 * scale)
+        self.left(54)
+        self.getscreen().update()
+
+    def tripiece(self, initpos, scale):
+        oldh = self.heading()
+        self.down()
+        self.backward(2.5 * scale)
+        self.tripolyr(31.5 * scale, scale)
+        self.up()
+        self.goto(initpos)
+        self.setheading(oldh)
+        self.down()
+        self.backward(2.5 * scale)
+        self.tripolyl(31.5 * scale, scale)
+        self.up()
+        self.goto(initpos)
+        self.setheading(oldh)
+        self.left(72)
+        self.getscreen().update()
+
+    def pentpiece(self, initpos, scale):
+        oldh = self.heading()
+        self.up()
+        self.forward(29 * scale)
+        self.down()
+        for i in range(5):
+            self.forward(18 * scale)
+            self.right(72)
+        self.pentr(18 * scale, 75, scale)
+        self.up()
+        self.goto(initpos)
+        self.setheading(oldh)
+        self.forward(29 * scale)
+        self.down()
+        for i in range(5):
+            self.forward(18 * scale)
+            self.right(72)
+        self.pentl(18 * scale, 75, scale)
+        self.up()
+        self.goto(initpos)
+        self.setheading(oldh)
+        self.left(72)
+        self.getscreen().update()
+
+    def pentl(self, side, ang, scale):
+        if side < (2 * scale): return
+        self.forward(side)
+        self.left(ang)
+        self.pentl(side - (.38 * scale), ang, scale)
+
+    def pentr(self, side, ang, scale):
+        if side < (2 * scale): return
+        self.forward(side)
+        self.right(ang)
+        self.pentr(side - (.38 * scale), ang, scale)
+
+    def tripolyr(self, side, scale):
+        if side < (4 * scale): return
+        self.forward(side)
+        self.right(111)
+        self.forward(side / 1.78)
+        self.right(111)
+        self.forward(side / 1.3)
+        self.right(146)
+        self.tripolyr(side * .75, scale)
+
+    def tripolyl(self, side, scale):
+        if side < (4 * scale): return
+        self.forward(side)
+        self.left(111)
+        self.forward(side / 1.78)
+        self.left(111)
+        self.forward(side / 1.3)
+        self.left(146)
+        self.tripolyl(side * .75, scale)
+
+    def centerpiece(self, s, a, scale):
+        self.forward(s); self.left(a)
+        if s < (7.5 * scale):
+            return
+        self.centerpiece(s - (1.2 * scale), a, scale)
+
+def main():
+    t = Designer()
+    t.speed(0)
+    t.hideturtle()
+    t.getscreen().delay(0)
+    t.getscreen().tracer(0)
+    at = clock()
+    t.design(t.position(), 2)
+    et = clock()
+    return "runtime: %.2f sec." % (et-at)
+
+if __name__ == '__main__':
+    msg = main()
+    print(msg)
+    mainloop()
+
+        
+
+         CLOCK
+
+from turtle import *
+from datetime import datetime
+
+def jump(distanz, winkel=0):
+    penup()
+    right(winkel)
+    forward(distanz)
+    left(winkel)
+    pendown()
+
+def hand(laenge, spitze):
+    fd(laenge*1.15)
+    rt(90)
+    fd(spitze/2.0)
+    lt(120)
+    fd(spitze)
+    lt(120)
+    fd(spitze)
+    lt(120)
+    fd(spitze/2.0)
+
+def make_hand_shape(name, laenge, spitze):
+    reset()
+    jump(-laenge*0.15)
+    begin_poly()
+    hand(laenge, spitze)
+    end_poly()
+    hand_form = get_poly()
+    register_shape(name, hand_form)
+
+def clockface(radius):
+    reset()
+    pensize(7)
+    for i in range(60):
+        jump(radius)
+        if i % 5 == 0:
+            fd(25)
+            jump(-radius-25)
+        else:
+            dot(3)
+            jump(-radius)
+        rt(6)
+
+def setup():
+    global second_hand, minute_hand, hour_hand, writer
+    mode("logo")
+    make_hand_shape("second_hand", 125, 25)
+    make_hand_shape("minute_hand",  130, 25)
+    make_hand_shape("hour_hand", 90, 25)
+    clockface(160)
+    second_hand = Turtle()
+    second_hand.shape("second_hand")
+    second_hand.color("gray20", "gray80")
+    minute_hand = Turtle()
+    minute_hand.shape("minute_hand")
+    minute_hand.color("blue1", "red1")
+    hour_hand = Turtle()
+    hour_hand.shape("hour_hand")
+    hour_hand.color("blue3", "red3")
+    for hand in second_hand, minute_hand, hour_hand:
+        hand.resizemode("user")
+        hand.shapesize(1, 1, 3)
+        hand.speed(0)
+    ht()
+    writer = Turtle()
+    #writer.mode("logo")
+    writer.ht()
+    writer.pu()
+    writer.bk(85)
+
+def wochentag(t):
+    wochentag = ["Monday", "Tuesday", "Wednesday",
+        "Thursday", "Friday", "Saturday", "Sunday"]
+    return wochentag[t.weekday()]
+
+def datum(z):
+    monat = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June",
+             "July", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."]
+    j = z.year
+    m = monat[z.month - 1]
+    t = z.day
+    return "%s %d %d" % (m, t, j)
+
+def tick():
+    t = datetime.today()
+    sekunde = t.second + t.microsecond*0.000001
+    minute = t.minute + sekunde/60.0
+    stunde = t.hour + minute/60.0
+    try:
+        tracer(False)  # Terminator can occur here
+        writer.clear()
+        writer.home()
+        writer.forward(65)
+        writer.write(wochentag(t),
+                     align="center", font=("Courier", 14, "bold"))
+        writer.back(150)
+        writer.write(datum(t),
+                     align="center", font=("Courier", 14, "bold"))
+        writer.forward(85)
+        tracer(True)
+        second_hand.setheading(6*sekunde)  # or here
+        minute_hand.setheading(6*minute)
+        hour_hand.setheading(30*stunde)
+        tracer(True)
+        ontimer(tick, 100)
+    except Terminator:
+        pass  # turtledemo user pressed STOP
+
+def main():
+    tracer(False)
+    setup()
+    tracer(True)
+    tick()
+    return "EVENTLOOP"
+
+if __name__ == "__main__":
+    mode("logo")
+    msg = main()
+    print(msg)
+    mainloop()
+
+
+
+
+
+print('Enter cycle number')
+n = int(input())
+k = 0
+
+for i in range(0,n):
+    print('Enter the number to be divisible by 4 and not divisible by 7')
+    num = int(input())
+    if num % 4 ==0 and num % 7 != 0:
+        k = k +1
+
+print('The number of numbers is ', k, ' divided by 4 and not divided by 7')
+
+
+n = int(input())
+k = 0
+
+for i in range(0,n):
+    num = int(input())
+    if num % 4 ==0 and num % 7 != 0:
+        k = k +1
+
+print(k)
+
+
+
+'''
+sp1 = ('text0','text1','text2','text3')
+print(sp1)
+print(sp1[2])
+
+print(sp1[::2])
+'''
+s1 = {'k': 'zn','collor': 'black', 'дерево':'листик'}
+
+print(s1)
+
+print(s1['k'])
+s1['машина'] = 'двигатель'
+
+print(s1)
+
+s1['collor'] = 'white'
+print(s1)
+
+del s1['дерево']
+
+print(s1)
+
+
+
+sp1 = ['0','1','2','3','4' ]
+print(sp1)
+
+print(sp1[3])
+a = 'day0'
+sp1[3] = 'сено'
+sp1[0] = a
+print(sp1[3])
+sp1.append('width')
+del sp1[1]
+
+print(sp1)
+
+sp2 = [221,257,88,663,744,999,65,45,2,0]
+sp3 = [21,'text',2563,'text']
+
+sp4 = [sp1, sp2, sp3]
+
+print(sp4)
+
+print(sp4[1][1])
+
+sp5 = [1,2,3]
+sp6 = [4,5,6]
+sp7 = sp5+sp6
+print(sp7)
+
+sp8 = [5,9]
+sp9 = sp8 * 10
+print(sp9)
+
+print(sp1[:2])
+print(sp1[1:3])
+print(sp1[::2])
+
+
+
+#t=2+2
+#t=30-16
+#t=2*36
+#t=100/2
+#t=100//2
+#t = 10 % 12
+#print(t)
+"""
+arr = [1,2,3,4,5,6,7,8,9,10]
+for i in arr:
+    if i % 2 == 0:
+        print(i)
+
+"""
+"""
+print(0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+
+      0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1)
+"""
+
+
+
+
+'''
+a = 0.1 
+for i in range(13):
+    a += 0.1
+print(a)
+
+
+try:
+    print(24 / 0)
+except Exception as e:
+    print(e)
+DivisionByZero
+
+'''
+'''
+from array import *
+data = array('i',[2,5,4,0,8]) 
+#data.insert(4,10)
+#data.pop(0)
+for i in data:
+    print(i)
+    print(len(data))
+'''
+'''
+
+arr = [10,11,0,5,0,8,0,9,0,7,0,321]
+
+for i in arr:
+    a = i
+    b = None
+    if a == 0:
+        print('!!!!!!!! делитель равен нулю !!!!!!!!')
+    else:
+        b = 345/a
+        print(' результат = ' + str(b))
+'''
+
+
+d1 = [1,4,5]
+for i in range(2):
+    d2 = []
+    for j in range(2):
+        d2.append(1)
+    d1.append(d2)
+
+print(d1)
+print(d2)
+print(i)
+
+
+
+
+
+from random import randint
+for i in range(1,11):
+    s=0
+    print(' ',2**i)
+    i*=i
+    print(i,"/")
+
+
+import time
+from time import gmtime, strftime
+
+x = 0
+def foo():
+    time.sleep(1)
+
+while True:
+    n = strftime('%a,%d %b %Y %H:%M:%S ', gmtime())
+    x +=1
+    print(x)
+    print(n)
+    foo()
+   #break
+t = time.gmtime(0)
+print(t)
+
+
+
+
+
+
+import time
+from time import gmtime, strftime
+
+x = 0
+def foo():
+    time.sleep(1n)
+
+while True:
+    n = strftime('%a,%d %b %Y %H:%M:%S ', gmtime())
+    x +=1
+    print(x)
+    print(n)
+    foo()
+   #break
+t = time.gmtime(0)
+print(t)
+
+time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=1, tm_isdst=0)
+1111111111111111111111111111111111111111111111
+
+import time
+
+def foo():
+    time.sleep(2.5)
+
+
+t0 = time.clock()
+foo()
+print(time.clock() - t0, 'Время обработки в секундах')
+
+t0 = time.time()
+foo()
+print(time.time() - t0, 'Время стены с секундах')
+
+111111111111111111111111111111111111111111111
+
+#program for translating from Russian into English
+
+from cgitb import text
+from email import header
+from fnmatch import translate
+from gettext import translation
+from tkinter import *
+from tkinter import ttk
+from googletrans import Translator
+
+
+#text translation function
+def translate():
+    for language, suffix in languages.items():
+        if comboTwo.get() == language:
+            text = t_input.get('1.0', END)
+            translation = translator.translate(text, dest=suffix)
+            t_output.delete('1.0', END)
+            t_output.insert('1.0',translation.text)
+
+
+#creating the main window
+root = Tk()
+root.geometry('500x340')
+root.title('Переводчик')
+root.resizable(0,0)
+root['bg'] = '#555'
+
+#class
+translator = Translator()
+
+#dictionary with languages
+languages = {'Русский': 'ru', 'Английский': 'en', 'Французский': 'fr'}
+
+#top Frame
+header_frame = Frame(root, bg='#783')
+
+#stretch in length
+header_frame.pack(fill=X)
+
+#central arrow Frame
+header_frame.grid_columnconfigure(0, weight=1)
+header_frame.grid_columnconfigure(1, weight=1)
+header_frame.grid_columnconfigure(2, weight=1)
+
+#first left Combobox
+comboOne = ttk.Combobox(header_frame,values=[lang for lang in languages], state='readonly')
+comboOne.current(0)
+comboOne.grid(row=0, column=0, pady=0, padx=0)
+
+#Label with an arrow at the top
+label = Label(header_frame, fg='black', bg='#783', font='Arial 20 bold',text='=>')
+label.grid(row=0, column=1,pady=2)
+
+#Text from the left Text input
+lab=Label(root, text='Text input\nВвод текста', font='Arial 10 bold',bg='#783')
+lab.place(x=0,y=50)
+
+#Text from the left Output text
+lab1=Label(root, text='Text Output\nВывод текста', font='Arial 9 bold',bg='#783')
+lab1.place(x=0,y=160)
+
+#second right Combobox
+comboTwo = ttk.Combobox(header_frame, values=[lang for lang in languages], state='raedonly')
+#Текущий/current/the language is automatically set to combo box
+comboTwo.current(1)
+comboTwo.grid(row=0,column=2)
+
+#first text entry window
+t_input = Text(root, width=40, height=5, font='Arial 12 bold',bg='#999')
+t_input.place(x=90, y=50)
+
+#text translation button
+btn = Button(root, width=40, height=2, text='__________Перевести => Translate__________', font='Arial 15 bold',bg='#783', command=translate)
+btn.place(x=5,y=270)
+
+#second window for displaying the translated text
+t_output = Text(root, width=40, height=5, font='Arial 12 bold',bg='#999')
+t_output.place(x=90, y=160)
+
+#program cycle
+root.mainloop()
+
+
+
+
+
+
+pip install pygame
+pip install googletrans==3.1.0a0
+pip install installer 
+installer -F
+
+#program for translating from Russian into English
+
+from cgitb import text
+from email import header
+from fnmatch import translate
+from gettext import translation
+from tkinter import *
+from tkinter import ttk
+from googletrans import Translator
+
+
+#text translation function
+def translate():
+    for language, suffix in languages.items():
+        if comboTwo.get() == language:
+            text = t_input.get('1.0', END)
+            translation = translator.translate(text, dest=suffix)
+            t_output.delete('1.0', END)
+            t_output.insert('1.0',translation.text)
+
+
+#creating the main window
+root = Tk()
+root.geometry('500x340')
+root.title('Переводчик')
+root.resizable(0,0)
+root['bg'] = '#555'
+
+#class
+translator = Translator()
+
+#dictionary with languages
+languages = {'Русский': 'ru', 'Английский': 'en', 'Французский': 'fr'}
+
+#top Frame
+header_frame = Frame(root, bg='#783')
+
+#stretch in length
+header_frame.pack(fill=X)
+
+#central arrow Frame
+header_frame.grid_columnconfigure(0, weight=1)
+header_frame.grid_columnconfigure(1, weight=1)
+header_frame.grid_columnconfigure(2, weight=1)
+
+#first left Combobox
+comboOne = ttk.Combobox(header_frame,values=[lang for lang in languages], state='readonly')
+comboOne.current(0)
+comboOne.grid(row=0, column=0, pady=0, padx=0)
+
+#Label with an arrow at the top
+label = Label(header_frame, fg='black', bg='#783', font='Arial 20 bold',text='=>')
+label.grid(row=0, column=1,pady=2)
+
+#Text from the left Text input
+lab=Label(root, text='Text input\nВвод текста', font='Arial 10 bold',bg='#783')
+lab.place(x=0,y=50)
+
+#Text from the left Output text
+lab1=Label(root, text='Output text\nВывод текста', font='Arial 9 bold',bg='#783')
+lab1.place(x=0,y=160)
+
+#second right Combobox
+comboTwo = ttk.Combobox(header_frame, values=[lang for lang in languages], state='raedonly')
+#Текущий/current/the language is automatically set to combo box
+comboTwo.current(1)
+comboTwo.grid(row=0,column=2)
+
+#first text entry window
+t_input = Text(root, width=40, height=5, font='Arial 12 bold',bg='#999')
+t_input.place(x=90, y=50)
+
+#text translation button
+btn = Button(root, width=40, height=2, text='__________Перевести => Translate__________', font='Arial 15 bold',bg='#783', command=translate)
+btn.place(x=5,y=270)
+
+#second window for displaying the translated text
+t_output = Text(root, width=40, height=5, font='Arial 12 bold',bg='#999')
+t_output.place(x=90, y=160)
+
+#program cycle
+root.mainloop()
+
+from email import header
+from fnmatch import translate
+from gettext import translation
+from tkinter import *
+from tkinter import ttk
+from googletrans import Translator
+
+
+def translate():
+    for language, suffix in languages.items():
+        if comboTwo.get() == language:
+            text = t_input.get('1.0', END)
+            translation = translator.translate(text, dest=suffix)
+            t_output.delete('1.0', END)
+            t_output.insert('1.0',translation.text)
+
+
+
+root = Tk()
+root.geometry('500x350')
+root.title('Переводчик')
+root.resizable(0,0)
+root['bg'] = 'black'
+translator = Translator()
+
+languages = {'Русский': 'ru', 'Английский': 'en', 'Французский': 'fr'}
+
+header_frame = Frame(root, bg='black')
+header_frame.pack(fill=X)
+
+header_frame.grid_columnconfigure(0, weight=1)
+header_frame.grid_columnconfigure(1, weight=1)
+header_frame.grid_columnconfigure(2, weight=1)
+
+comboOne = ttk.Combobox(header_frame,
+                        values=[lang for lang in languages], state='readonly')
+comboOne.current(0)
+comboOne.grid(row=0, column=0)
+
+
+
+label = Label(header_frame, fg='white', bg='black', font='Arial 20 bold',text='->')
+label.grid(row=0, column=1)
+
+comboTwo = ttk.Combobox(header_frame,
+                        values=[lang for lang in languages], state='raedonly')
+comboTwo.current(1)
+comboTwo.grid(row=0,column=2)
+
+t_input = Text(root, width=35, height=5, font='Arial 12 bold')
+t_input.pack(padx=20)
+
+btn = Button(root, width=45, text='Перевести', command=translate)
+btn.pack()
+
+t_output = Text(root, width=45, height=5, font='Arial 20 bold')
+t_output.pack(pady=20)
+
+root.mainloop()
+
+
+from ast import Delete
+from cgitb import text
+from faulthandler import disable
+from pickle import GLOBAL
+import time
+from tkinter import *
+a = 0
+f = 300
+
+root = Tk()
+root.title('Прога')
+root.geometry('200x200+10+10')
+root.resizable(0,0)
+
+def bot():
+
+    global f , a
+
+    f = f+1
+
+    btn.config(text=f, bg='#'+str(f+0))
+    
+    #entry.delete('0', END)
+    entry.insert(END, '')
+    #backgroundcolor = ' Black'
+       #btn.config(text=f, bg='#'+str(f+0),background='yellow') 
+    #time.sleep(0.2)
+    while True:
+        a = a + 1
+        #time.sleep(1)
+        entry.insert(END, a)
+        
+        if a >= 10:
+            break
+#time.sleep(10)
+
+def gh():
+    btn.config(state=['active'],fg='green',bd='10')
+
+def dis():
+    btn.config(state=['disabled'],fg='red',bg='gray',bd='0')
+    
+
+    
+btn1 = Button(root, text='  Active  ',command=gh)
+btn1.pack()
+
+btn2 = Button(root, text='Disabled',command=dis)
+btn2.pack()
+
+btn = Button(root, text='Button', font='Arial 10 bold', padx=10, pady=10, bg='#562',
+                                    bd='10',state=['disabled'],  fg='black',  command=bot)
+btn.pack()
+
+entry = Entry(root,width=30)
+entry.pack()
+
+root.mainloop()
+
+
+from tkinter import *
+import pyautogui
+
+def b1(event):
+    root.title('Левая кнопка мыши')
+
+
+def b3(event):
+    root.title('Right кнопка мыши')
+
+def movemouse(event):
+    #pyautogui.size()
+    pyautogui.position()
+    x = event.x
+    y = event.y
+    s = "движение мышью {} x {}" .format(x,y)
+    root.title(s) 
+
+   
+
+root = Tk()
+
+root.configure(bg='black')
+
+btn = Button(text='Mause',command=movemouse)
+btn.pack()
+
+root.bind('<Button-1>', b1)
+root.bind('<Button-3>', b3)
+root.bind('<Motion>', movemouse)
+
+root.mainloop()
+
+
+from tkinter import * 
+
+
+def event_info(event):
+    print(type(event))
+    print(event)
+    print(event.time)
+    print(event.x_root)
+    print(event.y_root)
+
+
+root = Tk()
+root.bind('a', event_info)
+
+
+root.mainloop()
+
+
+
+from cgitb import text
+from tkinter import *
+from turtle import right
+
+
+def left_click(event):
+    frame1.config(bg='red')
+    frame2.config(bg='white')
+    frame3.config(bg='white')
+
+    root.config(bg='white')
+    root.title('Left_click')
+
+def mid_click(event):
+    frame1.config(bg='white')
+    frame2.config(bg='red')
+    frame3.config(bg='white')
+
+    root.title('Middle_click')
+
+def right_click(event):
+    frame1.config(bg='white')
+    frame2.config(bg='white')
+    frame3.config(bg='red')
+
+    root.title('Right_click')
+
+
+root = Tk()
+root.config(bg='#459')
+root.title('Click')
+
+frame1 = Frame(root, width=500, height=500, bg='white')
+frame2 = Frame(root, width=500, height=500, bg='white')
+frame3 = Frame(root, width=500, height=500, bg='white') 
+
+frame1.grid(row=0, column=0, padx = 1, pady = 1)
+frame2.grid(row=0, column=1, padx = 1, pady = 1)
+frame3.grid(row=0, column=2, padx = 1, pady = 1)
+
+root.bind('<Button-1>', left_click)
+root.bind('<Button-2>', mid_click)
+root.bind('<Button-3>', right_click)
+
+root.mainloop()
+
+
+from cgitb import text
+from tkinter import *
+from turtle import right
+
+
+def left_click(event):
+    frame1.config(bg='red')
+    frame2.config(bg='white')
+    frame3.config(bg='white')
+
+    root.title('Left_click')
+
+  
+
+def mid_click(event):
+    frame1.config(bg='white')
+    frame2.config(bg='red')
+    frame3.config(bg='white')
+    root.title('Middle_click')
+
+    
+
+def right_click(event):
+    frame1.config(bg='white')
+    frame2.config(bg='white')
+    frame3.config(bg='red')
+    root.title('Right_click')
+
+    
+
+
+root = Tk()
+root.config(bg='#459')
+root.title('Click')
+
+frame1 = Frame(root, width=500, height=500, bg='white')
+frame2 = Frame(root, width=500, height=500, bg='white')
+frame3 = Frame(root, width=500, height=500, bg='white') 
+
+frame1.grid(row=0, column=0, padx = 1, pady = 1)
+frame2.grid(row=0, column=1, padx = 1, pady = 1)
+frame3.grid(row=0, column=2, padx = 1, pady = 1)
+
+root.bind('<Button-1>', left_click)
+root.bind('<Button-2>', mid_click)
+root.bind('<Button-3>', right_click)
+
+root.mainloop()
+
+
+
+
+
+
+pip install python-tk
+>>> import tkinter
+>>> tkinter._test()
+import Tkinter as tk
+
+from tkinter import *
+root = Tk()
+root.title('Прога')
+root.geometry('200x200')
+root.resizable(0,0)
+bnt = Button(root, text='Button').pack()
+root.mainloop()
+
+
+
+
+1
+"topmost": must be -alpha, -transparentcolor, -disabled, -fullscreen, 
+-toolwindow, or -topmost
+
+from tkinter import *
+root = Tk()
+root['bg'] = '#fafafa'
+root.title('name')
+
+root.wm_attributes('-alpha',0.7) прозрачность
+root.geometry('300x250')
+root.resizable(width=False, height=False)
+canvas = Canvas(root,height=300, width=250)
+canvas.pack()
+frame = Frame(root, bg='red')
+frame.place(relx=0.15,rely=0.15,relwidth=0.7, relheigh=0.7)
+title = Label(frame,text='text',bg='gray',font = 40)
+title.pack()
+btn = Button(frame, text='Button', bg='yellow')
+btn.pack()
+
+root.mainloop()
+Russian Language Pack for Visual Studio Code  v1.71.9140935
+MS-CEINTL.vscode-language-pack-ru
+2
+
+
+from tkinter  import *
+root = Tk()
+
+root.mainloop()
+
+3
+
+
+from tkinter import *
+root = Tk()
+root['bg']='#fafafa'
+root.title('name')
+root.wm_attributes('-alpha', 0.1)
+root.wm_attributes('-fullscreen', True)
+root.wm_attributes('-topmost', True)
+root.mainloop()
+
+
+from cgitb import text
+from tkinter import *
+from tkinter.tix import ButtonBox
+root = Tk()
+root['bg']='green'
+root.title('name')
+root.wm_attributes('-alpha', 0.9)
+#root.wm_attributes('-fullscreen', True)
+root.wm_attributes('-topmost', True)
+root.geometry('300x300')
+root.resizable(0,0)
+a=10
+d=10
+c=a+d
+root.title(c)
+btv=Button(root,text="Serega "+  str(c))
+btv.pack()
+root.mainloop()
+
+608b8b82342688f8ebfed1c85c76515a weather kye
+
+
+
+import logging
+from tkinter import *
+from tkinter import font
+from tkinter import messagebox
+root = Tk()
+
+def btn_click():
+   # messagebox.showinfo('проверка',' сообщение')
+    login = loginInput.get()
+    password = passField.get()
+
+    info_str = f'Логин: {str(login)}, Пароль: {str(password)}'
+    messagebox.showinfo('Название',info_str)
+
+    print('Some text')
+
+root.title('name')
+root['bg']='#fafafa'
+root.geometry('310x305+10+100')
+root.resizable(0,0)
+root.wm_attributes('-alpha', 0.9)
+
+canvas = Canvas(root,height=295,width=290,bg='gold')
+canvas.pack()
+
+frame = Frame(root, bg='red')
+frame.place(relx=0.15,rely=0.15,relheight=0.7,relwidth=0.7)
+
+title = Label(frame, text='text',bg='gray',font='Arial,40').pack()
+#title.pack()
+btn = Button(frame, text='Button', bg='yellow',font='Arial,20', command=btn_click)
+btn.pack()
+loginInput = Entry(frame,bg='white')
+loginInput.pack()
+passField = Entry(frame,bg='white',show='*')
+passField.pack()
+
+root.mainloop()
+
+from logging import root
+from tkinter import *
+from unittest import result
+from tkinter.font import Font
+from urllib import request
+root = Tk()
+
+def get_weather():
+    city = cityField.get()
+    key ='608b8b82342688f8ebfed1c85c76515a'
+    url = 'https://home.openweathermap.org/'
+    params = {'APPID': key, 'q': city, 'units': 'imperial'}
+    result = request.get(url,params=params) 
+    weather = result.json()
+
+    print(weather)
+
+
+
+
+root['bg'] = '#fafafa'
+root.title('Погода')
+root.geometry('300x300+10+10')
+root.resizable(0,0)
+
+frame_top = Frame(root, bg='red',bd=5)
+frame_top.place(rely=0.15,relx=0.15,relheight=0.25,relwidth=0.7)
+
+frame_button = Frame(root,bg='green',bd=10)
+frame_button.place(relx=0.15,rely=0.55,relwidth=0.7,relheight=0.25)
+
+cityField = Entry(frame_top,bg='white')
+cityField.pack()
+
+btn = Button(frame_top, text='Просмотреть погоду', command=get_weather)
+btn.pack()
+
+info = Label(frame_button, text='Информация о погоде', bg='#ffb700')
+info.pack()
+root.mainloop()
+
+
+from logging import root
+from tkinter import *
+from unittest import result
+from tkinter.font import Font
+from urllib import request
+root = Tk()
+
+def get_weather():
+    city = cityField.get()
+    key ='608b8b82342688f8ebfed1c85c76515a'
+    url = 'https://home.openweathermap.org/'
+    params = {'APPID': key, 'q': city, 'units': 'imperial'}
+    result = request.get(url,params=params) 
+    weather = result.json()
+
+    print(weather)
+
+
+
+
+root['bg'] = '#fafafa'
+root.title('Погода')
+root.geometry('300x300+10+10')
+root.resizable(0,0)
+
+frame_top = Frame(root, bg='red',bd=5)
+frame_top.place(rely=0.15,relx=0.15,relheight=0.25,relwidth=0.7)
+
+frame_button = Frame(root,bg='green',bd=10)
+frame_button.place(relx=0.15,rely=0.55,relwidth=0.7,relheight=0.25)
+
+cityField = Entry(frame_top,bg='white')
+cityField.pack()
+
+btn = Button(frame_top, text='Просмотреть погоду', command=get_weather)
+btn.pack()
+
+info = Label(frame_button, text='Информация о погоде', bg='#ffb700')
+info.pack()
+root.mainloop()
+
+
+from tkinter import *
+from tkinter import messagebox
+import random
+
+
+def no():
+    messagebox.showinfo('','Спасибо за ваш выбор')
+    quit()
+
+def motionMouse(event):
+    btnYes.place(x=random.randint(0,500),y=random.randint(0,500))
+
+
+root = Tk()
+root.geometry('600x600')
+root.resizable(0,0)
+root['bg'] = '#ffb700'
+root.title('прог')
+
+lab = Label(root, text='Лови кнопку',font="Arial 20 bold",bg='#555').pack()
+btnYes = Button(root, text='Yes', font='Arial 20 bold',bg='red')
+btnYes.place(x=170,y=100)
+btnYes.bind('<Enter>',motionMouse)
+btnNo = Button(root,text='No', font='Arial 20 bold', command=no).place(x=350, y=100)
+
+root.mainloop()
+
+
+
+
+from tkinter import *
+from tkinter import messagebox
+import random
+
+def vihod():
+    messagebox.showinfo('Quit','Quit')
+    quit()
+
+def motionMouse(event):
+    btn1.place(x=random.randint(10,500), y=random.randint(150,500))
+
+root = Tk()
+root.title('Test')
+root['bg'] = '#ffb700'
+root.geometry('600x600')
+root.resizable(0,0)
+ 
+btn1 = Button(root, text='Button1', font='Arial 20 bold',bg='gold')
+btn1.place(x=150,y=100)
+btn1.bind('<Enter>', motionMouse )
+btn2 = Button(root, text='Button2', font='Arial 20 bold',bg='#555', command=vihod).place(x=300,y=100)
+
+
+
+lab1 = Label(root, text='Label1', font='Arial 10 bold', bg='yellow').place(x=150,y=75)
+lab2 = Label(root, text='Label2', font='Arial 10 bold', bg='red').place(x=300,y=75)
+lab3 = Label(root, text='Label3', font='Arial 20 bold', bg='green').place(x=250 , y=5)
+root.mainloop()
+
+padx=10, pady=10 размер кнопки
+
+
+
+from cgitb import text
+from tkinter import *
+from tkinter import messagebox
+import random
+
+global count
+count = 100
+count1 = 0
+
+def vihod():
+    #messagebox.showinfo('Quit','Quit')
+    #quit()
+    global count
+    count += 1
+    btn2.config(text='Button '+str(count+300),bg='#'+str(count+300))
+    Frame1.config(bg='#'+str(count))
+    root.config(bg='#'+str(count+100))
+    btn1.config(text=count, bg='#'+str(count+200))
+    lab1 = Label(root, text= count+400  , font='Arial 10 bold', bg='#'+str(count+400
+                                                                )).place(x=150,y=75)
+    if count>=110:
+        lab2 = Label(root, text=count, font='Arial 20 bold', bg='red').place(x=count,y=count+50)
+
+def motionMouse(event):
+    btn1.place(x=random.randint(60,410), y=random.randint(156,530))
+    global count1
+    count1 += 1
+    btn1.configure(text=count1)
+
+
+ 
+
+
+root = Tk()
+root.title('Test')
+root['bg'] = '#ffb700'
+root.geometry('600x600')
+root.resizable(0,0)
+
+Frame1 = Frame(root, bg='gold')
+Frame1.place(relx=0.10,rely=0.26,relheight=0.7,relwidth=0.8)
+ 
+btn1 = Button(root, text='Button1', font='Arial 10 bold',bg='gold', padx=30, pady=10)
+btn1.place(x=150,y=100)
+
+btn1.bind('<Enter>', motionMouse )
+
+btn2 = Button(root, text='Button2', font='Arial 10 bold',bg='#510', command=vihod)
+btn2.place(x=300,y=100)
+
+
+
+lab1 = Label(root, text= count  , font='Arial 10 bold', bg='yellow').place(x=150,y=75)
+lab2 = Label(root, text='Label2', font='Arial 10 bold', bg='red').place(x=300,y=75)
+lab3 = Label(root, text='Label3', font='Arial 10 bold', bg='green').place(x=250 , y=5)
+
+
+
+root.mainloop()
+
+from cgitb import text
+from tkinter import *
+from tkinter import messagebox
+import random
+
+global count
+count = 100
+count1 = 0
+
+def vihod():
+    #messagebox.showinfo('Quit','Quit')
+    #quit()
+    global count
+    count += 1
+    btn2.config(text='Button '+str(count+300),bg='#'+str(count+300))
+    Frame1.config(bg='#'+str(count))
+    root.config(bg='#'+str(count+100))
+    btn1.config(text=count, bg='#'+str(count+200))
+    lab1 = Label(root, text= count+400  , font='Arial 10 bold', bg='#'+str(count+400
+                                                                )).place(x=150,y=75)
+    if count>=110:
+        lab2 = Label(root, text=count, font='Arial 20 bold', bg='red').place(x=count,y=count+50)
+
+def motionMouse(event):
+    btn1.place(x=random.randint(60,410), y=random.randint(156,530))
+    global count1
+    count1 += 1
+    btn1.configure(text=count1)
+
+
+ 
+
+
+root = Tk()
+root.title('Test')
+root['bg'] = '#ffb700'
+root.geometry('600x600')
+root.resizable(0,0)
+
+Frame1 = Frame(root, bg='gold')
+Frame1.place(relx=0.10,rely=0.26,relheight=0.7,relwidth=0.8)
+ 
+btn1 = Button(root, text='Button1', font='Arial 10 bold',bg='gold', padx=30, pady=10)
+btn1.place(x=150,y=100)
+
+btn1.bind('<Enter>', motionMouse )
+
+btn2 = Button(root, text='Button2', font='Arial 10 bold',bg='#510', command=vihod)
+btn2.place(x=300,y=100)
+
+
+
+lab1 = Label(root, text= count  , font='Arial 10 bold', bg='yellow').place(x=150,y=75)
+lab2 = Label(root, text='Label2', font='Arial 10 bold', bg='red').place(x=300,y=75)
+lab3 = Label(root, text='Label3', font='Arial 10 bold', bg='green').place(x=250 , y=5)
+
+
+
+root.mainloop()
+
+
+import time
+from tkinter import *
+
+
+time.sleep(5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
